@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B331FD952C500A94960 /* AppDelegate.swift */; };
-		F39B0B361FD952C500A94960 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B351FD952C500A94960 /* FirstViewController.swift */; };
+		F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B351FD952C500A94960 /* NoodlesViewController.swift */; };
 		F39B0B381FD952C500A94960 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B371FD952C500A94960 /* SecondViewController.swift */; };
 		F39B0B3B1FD952C500A94960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39B0B391FD952C500A94960 /* Main.storyboard */; };
 		F39B0B3D1FD952C500A94960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39B0B3C1FD952C500A94960 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		F39B0B301FD952C500A94960 /* TheNoodleBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheNoodleBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39B0B331FD952C500A94960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F39B0B351FD952C500A94960 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F39B0B351FD952C500A94960 /* NoodlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodlesViewController.swift; sourceTree = "<group>"; };
 		F39B0B371FD952C500A94960 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F39B0B3A1FD952C500A94960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F39B0B3C1FD952C500A94960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F39B0B331FD952C500A94960 /* AppDelegate.swift */,
-				F39B0B351FD952C500A94960 /* FirstViewController.swift */,
+				F39B0B351FD952C500A94960 /* NoodlesViewController.swift */,
 				F39B0B371FD952C500A94960 /* SecondViewController.swift */,
 				F39B0B391FD952C500A94960 /* Main.storyboard */,
 				F39B0B3C1FD952C500A94960 /* Assets.xcassets */,
@@ -264,7 +264,7 @@
 			files = (
 				F39B0B381FD952C500A94960 /* SecondViewController.swift in Sources */,
 				F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */,
-				F39B0B361FD952C500A94960 /* FirstViewController.swift in Sources */,
+				F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
