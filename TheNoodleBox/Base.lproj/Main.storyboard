@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Today's Noodel-->
+        <!--Today's Noodles-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="NoodlesViewController" customModule="TheNoodleBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,6 +58,9 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="iMe-t1-y4j" secondAttribute="bottom" constant="16" id="sg4-6y-gGm"/>
                                             <constraint firstItem="pKW-Dq-iti" firstAttribute="top" secondItem="Etj-21-poA" secondAttribute="top" id="zl7-zi-fgc"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="zTU-SR-eRp" kind="show" identifier="showRecipe" id="aJq-Ve-ucQ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -75,11 +78,112 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Today's Noodel" id="Lmr-IB-Aqj"/>
+                    <navigationItem key="navigationItem" title="Today's Noodles" id="Lmr-IB-Aqj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1581.5999999999999" y="-321.58920539730138"/>
+        </scene>
+        <!--Recipe View Controller-->
+        <scene sceneID="taG-qa-86a">
+            <objects>
+                <viewController id="zTU-SR-eRp" customClass="RecipeViewController" customModule="TheNoodleBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YDi-gO-Q7l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chickenNoodle" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-WR-UdT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="UTr-Tf-XS0"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlN-bp-cMa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D8S-ao-awb">
+                                        <rect key="frame" x="15" y="0.0" width="345" height="593.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-Bx-Bjn">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="270"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="270" id="Ngj-nA-HtR"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homemade Chicken Noodles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-eq-Qf2">
+                                                <rect key="frame" x="0.0" y="280" width="345" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="cui-OJ-xcP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-rG-xjc">
+                                                <rect key="frame" x="0.0" y="340" width="345" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="JMd-3B-gaQ"/>
+                                                </constraints>
+                                                <string key="text">Now that the clocks have gone back and it’s getting darker earlier, autumn has well and truly arrived, bringing some bracingly cold evenings along with it. There is no better time to curl up on a sofa with a blanket and a hot chocolate, or to warm up with some mulled wine at a bonfire party. Here are 5 deliciously warming drinks you can enjoy at home or take out in a flask to keep those autumnal evening chills at bay. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-iq-bed">
+                                                <rect key="frame" x="0.0" y="550" width="345" height="20"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Vrl-Ic-dc2"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fait avec ♥️ par TheNoodleBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEI-73-cn8">
+                                                <rect key="frame" x="0.0" y="580" width="345" height="13.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fEI-73-cn8" firstAttribute="leading" secondItem="D8S-ao-awb" secondAttribute="leading" id="RoD-OT-HnK"/>
+                                            <constraint firstAttribute="width" constant="345" id="mXs-3Q-k0a"/>
+                                            <constraint firstAttribute="trailing" secondItem="fEI-73-cn8" secondAttribute="trailing" id="vCD-hc-xOA"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="D8S-ao-awb" firstAttribute="leading" secondItem="VlN-bp-cMa" secondAttribute="leading" constant="15" id="FsV-RI-jjh"/>
+                                    <constraint firstItem="D8S-ao-awb" firstAttribute="top" secondItem="VlN-bp-cMa" secondAttribute="top" id="LbW-UF-bKA"/>
+                                    <constraint firstAttribute="trailing" secondItem="D8S-ao-awb" secondAttribute="trailing" constant="15" id="YG9-RQ-pNl"/>
+                                    <constraint firstAttribute="bottom" secondItem="D8S-ao-awb" secondAttribute="bottom" id="Ypx-P1-Qww"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="zTU-SR-eRp" id="DN7-9S-8id"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VlN-bp-cMa" firstAttribute="trailing" secondItem="9hU-WR-UdT" secondAttribute="trailing" id="2Dd-Bf-iUO"/>
+                            <constraint firstItem="9hU-WR-UdT" firstAttribute="top" secondItem="YDi-gO-Q7l" secondAttribute="topMargin" id="88G-IX-spM"/>
+                            <constraint firstItem="VlN-bp-cMa" firstAttribute="top" secondItem="9hU-WR-UdT" secondAttribute="top" id="Bnf-Jo-LJE"/>
+                            <constraint firstItem="VlN-bp-cMa" firstAttribute="bottom" secondItem="kE9-By-m3j" secondAttribute="bottom" id="FMu-44-4PA"/>
+                            <constraint firstItem="9hU-WR-UdT" firstAttribute="trailing" secondItem="kE9-By-m3j" secondAttribute="trailing" id="Whd-Pc-lkm"/>
+                            <constraint firstItem="9hU-WR-UdT" firstAttribute="leading" secondItem="kE9-By-m3j" secondAttribute="leading" id="ZhQ-hT-SgV"/>
+                            <constraint firstItem="VlN-bp-cMa" firstAttribute="leading" secondItem="9hU-WR-UdT" secondAttribute="leading" id="aSK-wb-q0q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kE9-By-m3j"/>
+                    </view>
+                    <connections>
+                        <outlet property="noodleImageView" destination="9hU-WR-UdT" id="xBh-Xe-bDc"/>
+                        <outlet property="recipeDetailStackView" destination="D8S-ao-awb" id="Z7d-1O-Ygf"/>
+                        <outlet property="recipeScrollView" destination="VlN-bp-cMa" id="C43-1l-LMo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVW-0E-Ptn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296.8000000000002" y="-321.58920539730138"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -90,14 +194,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="87" y="312" width="201.5" height="43"/>
+                                <rect key="frame" x="86.5" y="312" width="202" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="215" height="17"/>
+                                <rect key="frame" x="79.5" y="363" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -145,6 +249,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4k5-ZR-Kkz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
