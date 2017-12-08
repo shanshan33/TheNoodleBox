@@ -22,9 +22,10 @@ class NoodlesViewController: UIViewController {
     
     func setupNavBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
- //       navigationItem.hidesSearchBarWhenScrolling = false
+  //      navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
