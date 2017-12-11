@@ -27,7 +27,11 @@ extension State {
 class RamenAroundYouViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let manager = CLLocationManager()
-    var matchingItems: [MKMapItem] = [MKMapItem]()
+    var matchingItems: [MKMapItem] = [ ]
+    var matchRestoNames : [String] = []
+    
+    @IBOutlet weak var closedRestoTitle: UILabel!
+    @IBOutlet weak var marthRestaurantTableView: UITableView!
     
     @IBOutlet weak var restoPopupView: UIView!
     override func viewDidLoad() {
@@ -44,11 +48,20 @@ class RamenAroundYouViewController: UIViewController {
         restoPopupView.addGestureRecognizer(tapRecognizer)
     }
     
+    func setupNavigationBar() {
+ //       navigationController?.navigationBar.prefersLargeTitles = true
+ //       navigationItem.largeTitleDisplayMode = .always
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     func performRamenSearch() {
         matchingItems.removeAll()
         
         let parisLocation = CLLocationCoordinate2DMake(48.8566, 2.3522)
-        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let span = MKCoordinateSpanMake(0.04, 0.04)
         let region = MKCoordinateRegion(center: parisLocation, span: span)
         mapView.setRegion(region, animated: true)
         
@@ -70,25 +83,16 @@ class RamenAroundYouViewController: UIViewController {
                     
                     self.matchingItems.append(item as MKMapItem)
                     print("Matching items = \(self.matchingItems.count)")
-                    
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = item.placemark.coordinate
                     annotation.title = item.name
+                    self.matchRestoNames.append(item.name!)
                     self.mapView.addAnnotation(annotation)
                 }
             }
         })
     }
-    
-    func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+
     // Animation
     private var bottomConstraint = NSLayoutConstraint()
     
@@ -99,7 +103,6 @@ class RamenAroundYouViewController: UIViewController {
         restoPopupView.heightAnchor.constraint(equalToConstant: 300).isActive = true
     }
     
-    @IBOutlet weak var restoPopupViewHeightConstraint: NSLayoutConstraint!
     private var currentState: State = .closed
     
     private lazy var tapRecognizer: UITapGestureRecognizer = {
@@ -108,14 +111,50 @@ class RamenAroundYouViewController: UIViewController {
         return recognizer
     }()
     
-    @objc private func popupViewTapped(recognizer: UITapGestureRecognizer) {
+    private lazy var panRecognizer: UIPanGestureRecognizer = {
+        let recognizer = UIPanGestureRecognizer()
+ //       recognizer.addTarget(self, action: #selector(popupViewPanned(recognizer:)))
+        return recognizer
+    }()
+    
+//    @objc private func popupViewPanned(recognizer: UIPanGestureRecognizer) {
+//        switch recognizer.state {
+//        case .began:
+//            animateTransitionIfNeeded(to: currentState.opposite, duration: 1.5)
+//            transitionAnimator.pauseAnimation()
+//        case .changed:
+//            let translation = recognizer.translation(in: popupView)
+//            var fraction = -translation.y / popupOffset
+//            if currentState == .open { fraction *= -1 }
+//            transitionAnimator.fractionComplete = fraction
+//        case .ended:
+//            transitionAnimator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+//        default:
+//            ()
+//        }
+//    }
+    
+    @objc func popupViewTapped(recognizer: UITapGestureRecognizer) {
+        marthRestaurantTableView.reloadData()
+        animateTransitionIfNeeded(to: currentState.opposite, duration: 1.5)
+    }
+    
+    private func animateTransitionIfNeeded(to state: State, duration: TimeInterval) {
         let state = currentState.opposite
         let transitionAnimator = UIViewPropertyAnimator(duration: 1, dampingRatio: 1, animations: {
             switch state {
             case .expanded:
+                self.closedRestoTitle.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.heavy)
                 self.bottomConstraint.constant = 0
+                self.restoPopupView.layer.cornerRadius = 25
+                self.closedRestoTitle.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+
             case .closed:
+                self.closedRestoTitle.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.medium)
                 self.bottomConstraint.constant = 240
+                self.restoPopupView.layer.cornerRadius = 0
+                self.closedRestoTitle.transform = .identity
+
             }
             self.view.layoutIfNeeded()
         })
@@ -142,12 +181,13 @@ class RamenAroundYouViewController: UIViewController {
 extension RamenAroundYouViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return matchRestoNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestoCell")
+        cell?.textLabel?.text = matchRestoNames[indexPath.row]
         return cell!
     }
 }
