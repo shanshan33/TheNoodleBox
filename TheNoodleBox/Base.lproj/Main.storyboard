@@ -212,13 +212,52 @@
                                         <rect key="frame" x="0.0" y="67" width="375" height="266"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestoCell" id="2xT-74-iFp">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceCell" rowHeight="64" id="2xT-74-iFp" customClass="PlaceTableViewCell" customModule="TheNoodleBox" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2xT-74-iFp" id="rtU-2w-zv3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ttH-zP-N96">
+                                                            <rect key="frame" x="25" y="7" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="25I-3d-8Pd"/>
+                                                                <constraint firstAttribute="width" constant="50" id="wwD-CI-3vk"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07L-pA-lx4">
+                                                            <rect key="frame" x="100" y="7" width="250" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="kKP-Mm-YQc"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description: afdsafdsa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nq7-R6-4mb">
+                                                            <rect key="frame" x="100" y="40" width="235" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Nq7-R6-4mb" firstAttribute="bottom" secondItem="ttH-zP-N96" secondAttribute="bottom" id="0dh-X5-IoA"/>
+                                                        <constraint firstItem="07L-pA-lx4" firstAttribute="leading" secondItem="ttH-zP-N96" secondAttribute="trailing" constant="25" id="5cB-OK-xcJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="07L-pA-lx4" secondAttribute="trailing" constant="25" id="7bl-aa-IY9"/>
+                                                        <constraint firstItem="Nq7-R6-4mb" firstAttribute="leading" secondItem="07L-pA-lx4" secondAttribute="leading" id="Lih-UO-I4R"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Nq7-R6-4mb" secondAttribute="trailing" constant="25" id="R5V-e8-PUI"/>
+                                                        <constraint firstItem="ttH-zP-N96" firstAttribute="centerY" secondItem="rtU-2w-zv3" secondAttribute="centerY" id="k3i-F0-lCO"/>
+                                                        <constraint firstItem="ttH-zP-N96" firstAttribute="leading" secondItem="rtU-2w-zv3" secondAttribute="leading" constant="25" id="rxy-bA-IXa"/>
+                                                        <constraint firstItem="07L-pA-lx4" firstAttribute="top" secondItem="ttH-zP-N96" secondAttribute="top" id="wde-OZ-xwm"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="addressLabel" destination="Nq7-R6-4mb" id="hy1-qE-QO5"/>
+                                                    <outlet property="iconImageView" destination="ttH-zP-N96" id="33W-9B-ANe"/>
+                                                    <outlet property="nameLabel" destination="07L-pA-lx4" id="NBB-sI-gPW"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>

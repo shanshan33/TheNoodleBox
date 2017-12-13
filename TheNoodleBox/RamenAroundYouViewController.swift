@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GooglePlaces
 
 private enum State {
     case expanded
@@ -25,6 +26,7 @@ extension State {
 }
 
 class RamenAroundYouViewController: UIViewController {
+    
     @IBOutlet weak var mapView: MKMapView!
     let manager = CLLocationManager()
     var matchingItems: [MKMapItem] = [ ]
@@ -33,17 +35,22 @@ class RamenAroundYouViewController: UIViewController {
     @IBOutlet weak var closedRestoTitle: UILabel!
     @IBOutlet weak var marthRestaurantTableView: UITableView!
     
+    
     @IBOutlet weak var restoPopupView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        
+//        placesClient = GMSPlacesClient.shared()
         
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
-        performRamenSearch()
+        fetchDataOnLoad()
+        
+//        performRamenSearch()
         configureLayout()
         restoPopupView.addGestureRecognizer(tapRecognizer)
     }
@@ -56,6 +63,22 @@ class RamenAroundYouViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    var viewModel = PlaceViewModel()
+    var placeViewModels: [PlaceViewModel] = []
+
+    func fetchDataOnLoad() {
+        viewModel.fetchRemanRequestForParis { (viewModels, error) in
+            self.placeViewModels = viewModels
+//            DispatchQueue.main.async {
+//                self.cityNameLabel.text = viewModels.first?.cityName
+//                self.weatherDiscriptionLabel.text = viewModels.first?.weatherDescription
+//                self.temperatureLabel.text = viewModels.first?.averageTemp
+//                self.weatherCollectionView.reloadData()
+//           }
+        }
+    }
+    
     
     func performRamenSearch() {
         matchingItems.removeAll()
@@ -92,6 +115,26 @@ class RamenAroundYouViewController: UIViewController {
             }
         })
     }
+    
+//    func getcurrentPlace() {
+//        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+//            if let error = error {
+//                print("Pick Place error: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            if let placeLikelihoodList = placeLikelihoodList {
+//                let place = placeLikelihoodList.likelihoods.first?.place
+//                if let place = place {
+//                    let name = place.name
+//                    let address = place.formattedAddress?.components(separatedBy: ", ")
+//                        .joined(separator: "\n")
+//                    
+//                    print("name:\(name), \(address)")
+//                }
+//            }
+//        })
+//    }
 
     // Animation
     private var bottomConstraint = NSLayoutConstraint()
@@ -181,13 +224,17 @@ class RamenAroundYouViewController: UIViewController {
 extension RamenAroundYouViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return matchRestoNames.count
+        return self.placeViewModels.count > 0 ? self.placeViewModels.count : 5
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestoCell")
-        cell?.textLabel?.text = matchRestoNames[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell") as? PlaceTableViewCell
+        if self.placeViewModels.count > 0 {
+            cell?.configCell(viewModel: self.placeViewModels[indexPath.row])
+        }
+//        cell?.textLabel?.text = matchRestoNames[indexPath.row]
         return cell!
     }
 }

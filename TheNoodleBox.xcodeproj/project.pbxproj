@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58E804E92FCF87A35E92D698 /* libPods-TheNoodleBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFA191F61C010A8491AF62E /* libPods-TheNoodleBox.a */; };
+		F32630B01FE1331200D8287B /* SearchPlacesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630AF1FE1331200D8287B /* SearchPlacesAPI.swift */; };
+		F32630B21FE134CE00D8287B /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630B11FE134CE00D8287B /* PlaceViewModel.swift */; };
+		F32630B41FE138A600D8287B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630B31FE138A600D8287B /* SearchResult.swift */; };
+		F32630B61FE13AAB00D8287B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630B51FE13AAB00D8287B /* Place.swift */; };
+		F32630BB1FE1746600D8287B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630BA1FE1746600D8287B /* PlaceTableViewCell.swift */; };
 		F34D48911FD97CE800F0BBF7 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */; };
 		F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B331FD952C500A94960 /* AppDelegate.swift */; };
 		F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B351FD952C500A94960 /* NoodlesViewController.swift */; };
@@ -37,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FEA41979EEAAAD5A2C232B8 /* Pods-TheNoodleBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheNoodleBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheNoodleBox/Pods-TheNoodleBox.release.xcconfig"; sourceTree = "<group>"; };
+		86AF56BB9BB04EF64B7FAEE7 /* Pods-TheNoodleBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheNoodleBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheNoodleBox/Pods-TheNoodleBox.debug.xcconfig"; sourceTree = "<group>"; };
+		EBFA191F61C010A8491AF62E /* libPods-TheNoodleBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheNoodleBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32630AF1FE1331200D8287B /* SearchPlacesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesAPI.swift; sourceTree = "<group>"; };
+		F32630B11FE134CE00D8287B /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		F32630B31FE138A600D8287B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		F32630B51FE13AAB00D8287B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F32630BA1FE1746600D8287B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		F39B0B301FD952C500A94960 /* TheNoodleBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheNoodleBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39B0B331FD952C500A94960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E804E92FCF87A35E92D698 /* libPods-TheNoodleBox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,13 +95,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E211E4A43DB629296683F73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBFA191F61C010A8491AF62E /* libPods-TheNoodleBox.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C63622D762504FCCEFB9AC85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86AF56BB9BB04EF64B7FAEE7 /* Pods-TheNoodleBox.debug.xcconfig */,
+				3FEA41979EEAAAD5A2C232B8 /* Pods-TheNoodleBox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F32630B71FE13EC200D8287B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F32630B31FE138A600D8287B /* SearchResult.swift */,
+				F32630B51FE13AAB00D8287B /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F32630B81FE1688100D8287B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F32630B11FE134CE00D8287B /* PlaceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F32630B91FE168AA00D8287B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		F39B0B271FD952C500A94960 = {
 			isa = PBXGroup;
 			children = (
 				F39B0B321FD952C500A94960 /* TheNoodleBox */,
+				F32630B81FE1688100D8287B /* ViewModel */,
+				F32630B71FE13EC200D8287B /* Model */,
 				F39B0B491FD952C500A94960 /* TheNoodleBoxTests */,
 				F39B0B541FD952C500A94960 /* TheNoodleBoxUITests */,
 				F39B0B311FD952C500A94960 /* Products */,
+				C63622D762504FCCEFB9AC85 /* Pods */,
+				6E211E4A43DB629296683F73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F39B0B331FD952C500A94960 /* AppDelegate.swift */,
+				F32630B91FE168AA00D8287B /* ViewController */,
 				F39B0B351FD952C500A94960 /* NoodlesViewController.swift */,
 				F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */,
 				F39B0B371FD952C500A94960 /* RamenAroundYouViewController.swift */,
@@ -112,6 +173,8 @@
 				F39B0B3E1FD952C500A94960 /* LaunchScreen.storyboard */,
 				F39B0B411FD952C500A94960 /* Info.plist */,
 				F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */,
+				F32630AF1FE1331200D8287B /* SearchPlacesAPI.swift */,
+				F32630BA1FE1746600D8287B /* PlaceTableViewCell.swift */,
 			);
 			path = TheNoodleBox;
 			sourceTree = "<group>";
@@ -141,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F39B0B5A1FD952C500A94960 /* Build configuration list for PBXNativeTarget "TheNoodleBox" */;
 			buildPhases = (
+				C74FB42D2BF8ADB580A5B898 /* [CP] Check Pods Manifest.lock */,
 				F39B0B2C1FD952C500A94960 /* Sources */,
 				F39B0B2D1FD952C500A94960 /* Frameworks */,
 				F39B0B2E1FD952C500A94960 /* Resources */,
+				9C4F498A17A147E1F1E12492 /* [CP] Embed Pods Frameworks */,
+				C147BC6C35D207C6E54C26DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,16 +329,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9C4F498A17A147E1F1E12492 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheNoodleBox/Pods-TheNoodleBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C147BC6C35D207C6E54C26DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TheNoodleBox/Pods-TheNoodleBox-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheNoodleBox/Pods-TheNoodleBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C74FB42D2BF8ADB580A5B898 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheNoodleBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F39B0B2C1FD952C500A94960 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F34D48911FD97CE800F0BBF7 /* RecipeViewController.swift in Sources */,
+				F32630B01FE1331200D8287B /* SearchPlacesAPI.swift in Sources */,
 				F39B0B381FD952C500A94960 /* RamenAroundYouViewController.swift in Sources */,
+				F32630B41FE138A600D8287B /* SearchResult.swift in Sources */,
+				F32630B21FE134CE00D8287B /* PlaceViewModel.swift in Sources */,
 				F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */,
+				F32630B61FE13AAB00D8287B /* Place.swift in Sources */,
 				F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */,
 				F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */,
+				F32630BB1FE1746600D8287B /* PlaceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +563,7 @@
 		};
 		F39B0B5B1FD952C500A94960 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86AF56BB9BB04EF64B7FAEE7 /* Pods-TheNoodleBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -454,6 +582,7 @@
 		};
 		F39B0B5C1FD952C500A94960 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FEA41979EEAAAD5A2C232B8 /* Pods-TheNoodleBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
