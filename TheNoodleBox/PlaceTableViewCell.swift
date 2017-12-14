@@ -30,7 +30,11 @@ class PlaceTableViewCell: UITableViewCell {
     public func configCell(viewModel:PlaceViewModel) {
         self.nameLabel.text = viewModel.name
         self.addressLabel.text = viewModel.address
-        viewModel.fetchPlaceIcon(url: viewModel.iconURL!, completion: {(image) in
+//        viewModel.fetchPlaceIcon(url: viewModel.iconURL!, completion: {(image) in
+//            self.iconImageView.image = image
+//        })
+        
+        viewModel.fetchIcon(viewModel: viewModel, completion: {(image) in
             self.iconImageView.image = image
         })
     }

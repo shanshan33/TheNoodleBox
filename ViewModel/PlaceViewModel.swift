@@ -13,6 +13,8 @@ import UIKit
 class PlaceViewModel {
     
      let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.8566,2.3522&radius=5000&type=restaurant&keyword=ramen&key=AIzaSyBQJD3y2EQN720QXY_BRvE7O95URRD7TY8"
+    
+    //AIzaSyCbucemWSZne5ps6EMhFlw9dW2usJ731MY"
 
     let searchPlacesAPI = SearchPlacesAPI()
     
@@ -66,5 +68,13 @@ class PlaceViewModel {
             }
         }
         task.resume()
+    }
+    
+    func fetchIcon(viewModel: PlaceViewModel, completion:@escaping (_ icon: UIImage) -> Void ) {
+        searchPlacesAPI.loadFirstPhotoForPlace(placeID: viewModel.placeID!) { (photo) in
+            DispatchQueue.main.async {
+                completion(photo)
+            }
+        }
     }
 }

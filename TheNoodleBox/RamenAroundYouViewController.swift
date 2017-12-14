@@ -50,7 +50,7 @@ class RamenAroundYouViewController: UIViewController {
         
         fetchDataOnLoad()
         
-//        performRamenSearch()
+        performRamenSearch()
         configureLayout()
         restoPopupView.addGestureRecognizer(tapRecognizer)
     }
