@@ -12,10 +12,12 @@ import UIKit
 
 class PlaceViewModel {
     
-     let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.8566,2.3522&radius=5000&type=restaurant&keyword=ramen&key=AIzaSyBQJD3y2EQN720QXY_BRvE7O95URRD7TY8"
+     let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.8566,2.3522&radius=5000&type=restaurant&keyword=ramen&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
     
-    //AIzaSyCbucemWSZne5ps6EMhFlw9dW2usJ731MY"
-
+    let fetchImageURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%photoref%&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
+    
+    // new key of The Noodle Box V1 : AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o
+    
     let searchPlacesAPI = SearchPlacesAPI()
     
     var iconURL: URL?
@@ -40,7 +42,7 @@ class PlaceViewModel {
             case.success (let searchResult):
                 guard let results = searchResult.results else { return }
                 for place in results {
-                    self.iconURL = URL(string: place.icon!)
+                    self.iconURL = self.configureIconUrl(reference: (place.photos?.first?.reference)!)
                     self.name  = place.name
                     self.rating = place.rating
                     self.address = place.address
@@ -54,6 +56,11 @@ class PlaceViewModel {
                 completionHandler([],error?.localizedDescription as? Error)
             }
         })
+    }
+    
+    private func configureIconUrl(reference: String) -> URL {
+        let urlString = fetchImageURL.replacingOccurrences(of: "%photoref%", with: reference)
+        return URL(string:urlString)!
     }
     
     func fetchPlaceIcon(url:URL, completion:@escaping (_ icon: UIImage) -> Void ) {
@@ -70,11 +77,11 @@ class PlaceViewModel {
         task.resume()
     }
     
-    func fetchIcon(viewModel: PlaceViewModel, completion:@escaping (_ icon: UIImage) -> Void ) {
-        searchPlacesAPI.loadFirstPhotoForPlace(placeID: viewModel.placeID!) { (photo) in
-            DispatchQueue.main.async {
-                completion(photo)
-            }
-        }
-    }
+//    func fetchIcon(viewModel: PlaceViewModel, completion:@escaping (_ icon: UIImage) -> Void ) {
+//        searchPlacesAPI.loadFirstPhotoForPlace(placeID: viewModel.placeID!) { (photo) in
+//            DispatchQueue.main.async {
+//                completion(photo)
+//            }
+//        }
+//    }
 }

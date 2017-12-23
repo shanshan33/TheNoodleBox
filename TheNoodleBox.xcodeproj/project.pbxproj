@@ -14,6 +14,7 @@
 		F32630B61FE13AAB00D8287B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630B51FE13AAB00D8287B /* Place.swift */; };
 		F32630BB1FE1746600D8287B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630BA1FE1746600D8287B /* PlaceTableViewCell.swift */; };
 		F34D48911FD97CE800F0BBF7 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */; };
+		F39733661FE2D127005D3323 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39733651FE2D127005D3323 /* Photo.swift */; };
 		F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B331FD952C500A94960 /* AppDelegate.swift */; };
 		F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B351FD952C500A94960 /* NoodlesViewController.swift */; };
 		F39B0B381FD952C500A94960 /* RamenAroundYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B371FD952C500A94960 /* RamenAroundYouViewController.swift */; };
@@ -52,6 +53,7 @@
 		F32630B51FE13AAB00D8287B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		F32630BA1FE1746600D8287B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		F39733651FE2D127005D3323 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F39B0B301FD952C500A94960 /* TheNoodleBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheNoodleBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39B0B331FD952C500A94960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F39B0B351FD952C500A94960 /* NoodlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodlesViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		F32630B71FE13EC200D8287B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F39733651FE2D127005D3323 /* Photo.swift */,
 				F32630B31FE138A600D8287B /* SearchResult.swift */,
 				F32630B51FE13AAB00D8287B /* Place.swift */,
 			);
@@ -397,6 +400,7 @@
 				F32630B21FE134CE00D8287B /* PlaceViewModel.swift in Sources */,
 				F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */,
 				F32630B61FE13AAB00D8287B /* Place.swift in Sources */,
+				F39733661FE2D127005D3323 /* Photo.swift in Sources */,
 				F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */,
 				F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */,
 				F32630BB1FE1746600D8287B /* PlaceTableViewCell.swift in Sources */,

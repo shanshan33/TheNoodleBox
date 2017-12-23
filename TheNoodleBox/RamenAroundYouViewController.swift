@@ -70,12 +70,6 @@ class RamenAroundYouViewController: UIViewController {
     func fetchDataOnLoad() {
         viewModel.fetchRemanRequestForParis { (viewModels, error) in
             self.placeViewModels = viewModels
-//            DispatchQueue.main.async {
-//                self.cityNameLabel.text = viewModels.first?.cityName
-//                self.weatherDiscriptionLabel.text = viewModels.first?.weatherDescription
-//                self.temperatureLabel.text = viewModels.first?.averageTemp
-//                self.weatherCollectionView.reloadData()
-//           }
         }
     }
     
