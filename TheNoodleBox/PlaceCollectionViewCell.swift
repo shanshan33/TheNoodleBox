@@ -1,5 +1,5 @@
 //
-//  PlaceTableViewCell.swift
+//  PlaceCollectionViewCell.swift
 //  TheNoodleBox
 //
 //  Created by Shanshan Zhao on 13/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceTableViewCell: UITableViewCell {
+class PlaceCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,14 +17,8 @@ class PlaceTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        iconImageView.clipsToBounds = true
+        iconImageView.layer.cornerRadius = 10
     }
     
     public func configCell(viewModel:PlaceViewModel) {

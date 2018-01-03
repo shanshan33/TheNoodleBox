@@ -33,8 +33,7 @@ class RamenAroundYouViewController: UIViewController {
     var matchRestoNames : [String] = []
     
     @IBOutlet weak var closedRestoTitle: UILabel!
-    @IBOutlet weak var marthRestaurantTableView: UITableView!
-    
+    @IBOutlet weak var RamenRestosListCollectionView: UICollectionView!
     
     @IBOutlet weak var restoPopupView: UIView!
     override func viewDidLoad() {
@@ -53,6 +52,8 @@ class RamenAroundYouViewController: UIViewController {
         performRamenSearch()
         configureLayout()
         restoPopupView.addGestureRecognizer(tapRecognizer)
+        
+        RamenRestosListCollectionView?.register(animateLoadingCell.self, forCellWithReuseIdentifier: "Loader")
     }
     
     func setupNavigationBar() {
@@ -135,9 +136,9 @@ class RamenAroundYouViewController: UIViewController {
     
     private func configureLayout() {
         restoPopupView.translatesAutoresizingMaskIntoConstraints = false
-        bottomConstraint = restoPopupView.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 240)
+        bottomConstraint = restoPopupView.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 400)
         bottomConstraint.isActive = true
-        restoPopupView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        restoPopupView.heightAnchor.constraint(equalToConstant: 460).isActive = true
     }
     
     private var currentState: State = .closed
@@ -172,7 +173,7 @@ class RamenAroundYouViewController: UIViewController {
 //    }
     
     @objc func popupViewTapped(recognizer: UITapGestureRecognizer) {
-        marthRestaurantTableView.reloadData()
+        RamenRestosListCollectionView.reloadData()
         animateTransitionIfNeeded(to: currentState.opposite, duration: 1.5)
     }
     
@@ -188,7 +189,7 @@ class RamenAroundYouViewController: UIViewController {
 
             case .closed:
                 self.closedRestoTitle.font = UIFont.systemFont(ofSize: 19, weight: UIFont.Weight.medium)
-                self.bottomConstraint.constant = 240
+                self.bottomConstraint.constant = 400
                 self.restoPopupView.layer.cornerRadius = 0
                 self.closedRestoTitle.transform = .identity
 
@@ -208,29 +209,35 @@ class RamenAroundYouViewController: UIViewController {
             case .expanded:
                 self.bottomConstraint.constant = 0
             case .closed:
-                self.bottomConstraint.constant = 240
+                self.bottomConstraint.constant = 400
             }
         }
         transitionAnimator.startAnimation()
     }
 }
 
-extension RamenAroundYouViewController: UITableViewDataSource {
+extension RamenAroundYouViewController: UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.placeViewModels.count > 0 ? self.placeViewModels.count : 5
 
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell") as? PlaceTableViewCell
-        if self.placeViewModels.count > 0 {
-            cell?.configCell(viewModel: self.placeViewModels[indexPath.row])
-        }
-//        cell?.textLabel?.text = matchRestoNames[indexPath.row]
-        return cell!
+    let cell: UICollectionViewCell = {
+            if self.placeViewModels.count > 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCollectionViewCell
+                cell.configCell(viewModel: self.placeViewModels[indexPath.row])
+                cell.iconImageView.layer.cornerRadius = 10
+                return cell
+            }
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "Loader", for: indexPath)
+        }()
+        cell.layer.cornerRadius = 10
+        return cell
     }
+    
 }
 
 extension RamenAroundYouViewController: CLLocationManagerDelegate {
