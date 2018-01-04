@@ -22,8 +22,8 @@ class animateLoadingCell: UICollectionViewCell {
         backgroundColor = .white
     }
     
-    /// The index of the loading cell, used to shift slightly the timing of the
-    /// animations between consecutive cells.
+    // The index of the loading cell, used to shift slightly the timing of the
+    // animations between consecutive cells.
     private var index = 0
     
     /// The layer containing the drawing of the cell.
@@ -35,20 +35,12 @@ class animateLoadingCell: UICollectionViewCell {
         return shapeLayer
     }()
 
-    /// The path for the shape to draw.
+    // The path for the shape to draw selon the  PlaceCell
     private var shapePath: CGPath {
         let path = CGMutablePath()
-        
-        path.addEllipse(in: CGRect(x: 12, y: 16, width: 50, height: 50))
-        path.addRect(CGRect(x: 74, y: 16, width: 68, height: 11))
-        for i in 0..<5 {
-            path.addEllipse(in: CGRect(x: 74 + i * 15, y: 37, width: 8, height: 8))
-        }
-        path.addRect(CGRect(x: 74, y: 55, width: 195, height: 11))
-        path.addRect(CGRect(x: 16, y: 86, width: 253, height: 11))
-        path.addRect(CGRect(x: 16, y: 109, width: 210, height: 11))
-        path.addRect(CGRect(x: 16, y: 132, width: 150, height: 11))
-        
+        path.addRect(CGRect(x: 0, y: 0, width: 150, height: 150))
+        path.addRect(CGRect(x: 3, y: 161, width: 120, height: 13))
+        path.addRect(CGRect(x: 3, y: 184, width: 144, height: 13))
         return path
     }
     

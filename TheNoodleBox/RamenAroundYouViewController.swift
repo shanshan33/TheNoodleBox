@@ -227,10 +227,10 @@ extension RamenAroundYouViewController: UICollectionViewDataSource {
         
     let cell: UICollectionViewCell = {
             if self.placeViewModels.count > 0 {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCollectionViewCell
-                cell.configCell(viewModel: self.placeViewModels[indexPath.row])
-                cell.iconImageView.layer.cornerRadius = 10
-                return cell
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCollectionViewCell
+//                cell.configCell(viewModel: self.placeViewModels[indexPath.row])
+//                cell.iconImageView.layer.cornerRadius = 10
+ //               return cell
             }
             return collectionView.dequeueReusableCell(withReuseIdentifier: "Loader", for: indexPath)
         }()
