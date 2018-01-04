@@ -34,12 +34,13 @@ class RamenAroundYouViewController: UIViewController {
     
     @IBOutlet weak var closedRestoTitle: UILabel!
     @IBOutlet weak var RamenRestosListCollectionView: UICollectionView!
-    
     @IBOutlet weak var restoPopupView: UIView!
+    
+    let transitionAnimator = appStoreEffectAnimator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        
 //        placesClient = GMSPlacesClient.shared()
         
         manager.delegate = self
@@ -51,9 +52,10 @@ class RamenAroundYouViewController: UIViewController {
         
         performRamenSearch()
         configureLayout()
-        restoPopupView.addGestureRecognizer(tapRecognizer)
+        closedRestoTitle.addGestureRecognizer(tapRecognizer)
         
         RamenRestosListCollectionView?.register(animateLoadingCell.self, forCellWithReuseIdentifier: "Loader")
+        
     }
     
     func setupNavigationBar() {
@@ -98,7 +100,6 @@ class RamenAroundYouViewController: UIViewController {
                 print("Matches found")
                 guard let result = response?.mapItems else { return }
                 for item in result {
-                    
                     self.matchingItems.append(item as MKMapItem)
                     print("Matching items = \(self.matchingItems.count)")
                     let annotation = MKPointAnnotation()
@@ -110,26 +111,6 @@ class RamenAroundYouViewController: UIViewController {
             }
         })
     }
-    
-//    func getcurrentPlace() {
-//        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
-//            if let error = error {
-//                print("Pick Place error: \(error.localizedDescription)")
-//                return
-//            }
-//            
-//            if let placeLikelihoodList = placeLikelihoodList {
-//                let place = placeLikelihoodList.likelihoods.first?.place
-//                if let place = place {
-//                    let name = place.name
-//                    let address = place.formattedAddress?.components(separatedBy: ", ")
-//                        .joined(separator: "\n")
-//                    
-//                    print("name:\(name), \(address)")
-//                }
-//            }
-//        })
-//    }
 
     // Animation
     private var bottomConstraint = NSLayoutConstraint()
@@ -216,6 +197,22 @@ class RamenAroundYouViewController: UIViewController {
     }
 }
 
+extension RamenAroundYouViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        if let cell = collectionView.cellForItem(at: indexPath) as? PlaceCollectionViewCell {
+            transitionAnimator.originFrame = cell.convert(cell.bounds, to: nil)
+            transitionAnimator.presenting = true
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let restoDetail = storyboard.instantiateViewController(withIdentifier: "RestaurantDetails") as! RestaurantDetailsViewController
+            restoDetail.transitioningDelegate = self
+            self.present(restoDetail, animated: true, completion: nil)
+        }
+    }
+}
+
 extension RamenAroundYouViewController: UICollectionViewDataSource {
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -224,22 +221,32 @@ extension RamenAroundYouViewController: UICollectionViewDataSource {
     }
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
     let cell: UICollectionViewCell = {
             if self.placeViewModels.count > 0 {
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCollectionViewCell
-//                cell.configCell(viewModel: self.placeViewModels[indexPath.row])
-//                cell.iconImageView.layer.cornerRadius = 10
- //               return cell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCollectionViewCell
+                cell.configCell(viewModel: self.placeViewModels[indexPath.row])
+                cell.iconImageView.layer.cornerRadius = 10
+                return cell
             }
             return collectionView.dequeueReusableCell(withReuseIdentifier: "Loader", for: indexPath)
         }()
         cell.layer.cornerRadius = 10
         return cell
     }
-    
 }
 
+extension RamenAroundYouViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return transitionAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transitionAnimator.presenting = false
+        return transitionAnimator
+    }
+}
 extension RamenAroundYouViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

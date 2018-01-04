@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVW-0E-Ptn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2296.8000000000002" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="2409" y="-322"/>
         </scene>
         <!--Ramen in Paris-->
         <scene sceneID="wg7-f3-ORb">
@@ -199,7 +199,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-TF-Ln7">
                                 <rect key="frame" x="0.0" y="285" width="375" height="333"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-Fk-DYW">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fK-Fk-DYW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mH3-7i-03e"/>
@@ -208,7 +208,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FsE-NJ-B93">
+                                    <collectionView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FsE-NJ-B93">
                                         <rect key="frame" x="8" y="67" width="359" height="266"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="0.0" id="BCX-uH-Ep7">
@@ -233,9 +233,9 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hero" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISZ-YO-eab">
-                                                            <rect key="frame" x="3" y="150" width="144" height="20"/>
+                                                            <rect key="frame" x="3" y="155" width="144" height="15"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="4S7-d8-AsF"/>
+                                                                <constraint firstAttribute="height" constant="15" id="4S7-d8-AsF"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,7 +256,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="0B1-Xu-zZe" secondAttribute="trailing" id="9V6-SM-wAc"/>
                                                     <constraint firstItem="eTo-JC-jgc" firstAttribute="leading" secondItem="KqF-vE-7U6" secondAttribute="leading" constant="3" id="FwY-29-jxZ"/>
                                                     <constraint firstItem="eTo-JC-jgc" firstAttribute="centerX" secondItem="ISZ-YO-eab" secondAttribute="centerX" id="GBo-Uj-NR2"/>
-                                                    <constraint firstItem="ISZ-YO-eab" firstAttribute="top" secondItem="0B1-Xu-zZe" secondAttribute="bottom" id="Hyt-5U-xQl"/>
+                                                    <constraint firstItem="ISZ-YO-eab" firstAttribute="top" secondItem="0B1-Xu-zZe" secondAttribute="bottom" constant="5" id="Hyt-5U-xQl"/>
                                                     <constraint firstItem="0B1-Xu-zZe" firstAttribute="top" secondItem="KqF-vE-7U6" secondAttribute="top" id="R7F-AY-Yf4"/>
                                                     <constraint firstItem="ISZ-YO-eab" firstAttribute="leading" secondItem="KqF-vE-7U6" secondAttribute="leading" constant="3" id="RYg-21-Blf"/>
                                                     <constraint firstItem="0B1-Xu-zZe" firstAttribute="leading" secondItem="KqF-vE-7U6" secondAttribute="leading" id="TUr-b7-EDw"/>
@@ -369,6 +369,122 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bep-9t-YVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748.79999999999995" y="359.82008995502252"/>
+        </scene>
+        <!--Restaurant Details View Controller-->
+        <scene sceneID="vSc-48-GKV">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantDetails" id="Ufi-yz-UVt" customClass="RestaurantDetailsViewController" customModule="TheNoodleBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzG-Sr-7jX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_ramen" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-bc-vZc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="STJ-rz-eYD"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-nz-tf3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="per-Yb-H17">
+                                        <rect key="frame" x="15" y="0.0" width="345" height="593.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRu-dM-JPC">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="270"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-KS-cAh">
+                                                        <rect key="frame" x="273" y="21" width="46" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                        <state key="normal" title="X">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="closeView:" destination="Ufi-yz-UVt" eventType="touchUpInside" id="IOw-js-TlG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="270" id="BbT-yh-MDT"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poulet Shio Ramen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8R-mM-ArM">
+                                                <rect key="frame" x="0.0" y="280" width="345" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bjK-nN-9XQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwd-Wh-56p">
+                                                <rect key="frame" x="0.0" y="340" width="345" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="9LE-ju-Uqm"/>
+                                                </constraints>
+                                                <string key="text">Now that the clocks have gone back and it’s getting darker earlier, autumn has well and truly arrived, bringing some bracingly cold evenings along with it. There is no better time to curl up on a sofa with a blanket and a hot chocolate, or to warm up with some mulled wine at a bonfire party. Here are 5 deliciously warming drinks you can enjoy at home or take out in a flask to keep those autumnal evening chills at bay. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQl-eY-D2n">
+                                                <rect key="frame" x="0.0" y="550" width="345" height="20"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="6Dc-PZ-yNE"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fait avec ♥️ par TheNoodleBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jk-yP-RsN">
+                                                <rect key="frame" x="0.0" y="580" width="345" height="13.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="345" id="V3l-UC-eYr"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Jk-yP-RsN" secondAttribute="trailing" id="rk0-3k-QEH"/>
+                                            <constraint firstItem="1Jk-yP-RsN" firstAttribute="leading" secondItem="per-Yb-H17" secondAttribute="leading" id="tji-jr-r2i"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="per-Yb-H17" firstAttribute="leading" secondItem="ufg-nz-tf3" secondAttribute="leading" constant="15" id="QcM-q6-0ie"/>
+                                    <constraint firstItem="per-Yb-H17" firstAttribute="top" secondItem="ufg-nz-tf3" secondAttribute="top" id="fCN-c2-Ydr"/>
+                                    <constraint firstAttribute="trailing" secondItem="per-Yb-H17" secondAttribute="trailing" constant="15" id="nlQ-wF-EQ3"/>
+                                    <constraint firstAttribute="bottom" secondItem="per-Yb-H17" secondAttribute="bottom" id="qU2-TP-0Lb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Ufi-yz-UVt" id="5pF-rU-Hpk"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ufg-nz-tf3" firstAttribute="top" secondItem="Oua-bc-vZc" secondAttribute="top" id="2Rl-EF-hcx"/>
+                            <constraint firstItem="ufg-nz-tf3" firstAttribute="trailing" secondItem="Oua-bc-vZc" secondAttribute="trailing" id="MeX-Bn-lhu"/>
+                            <constraint firstItem="ufg-nz-tf3" firstAttribute="leading" secondItem="Oua-bc-vZc" secondAttribute="leading" id="ZjR-X4-42D"/>
+                            <constraint firstItem="Oua-bc-vZc" firstAttribute="trailing" secondItem="jTe-rh-3UC" secondAttribute="trailing" id="c2Z-MO-qSb"/>
+                            <constraint firstItem="Oua-bc-vZc" firstAttribute="top" secondItem="hzG-Sr-7jX" secondAttribute="topMargin" id="iDY-3v-2ye"/>
+                            <constraint firstItem="Oua-bc-vZc" firstAttribute="leading" secondItem="jTe-rh-3UC" secondAttribute="leading" id="k8P-x5-Edr"/>
+                            <constraint firstItem="ufg-nz-tf3" firstAttribute="bottom" secondItem="jTe-rh-3UC" secondAttribute="bottom" id="yjS-dA-qId"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jTe-rh-3UC"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="6fB-KS-cAh" id="wEI-5N-WFL"/>
+                        <outlet property="placeDetailsScrollView" destination="ufg-nz-tf3" id="ioc-lY-jFB"/>
+                        <outlet property="placeImageView" destination="Oua-bc-vZc" id="c1z-YO-YYT"/>
+                        <outlet property="placeInfoStackView" destination="per-Yb-H17" id="l40-eI-wxK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceI-1h-kvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289" y="358"/>
         </scene>
     </scenes>
     <resources>
