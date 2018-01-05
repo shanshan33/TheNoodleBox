@@ -59,7 +59,7 @@ class RamenAroundYouViewController: UIViewController {
     }
     
     func setupNavigationBar() {
- //       navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
  //       navigationItem.largeTitleDisplayMode = .always
     }
     
@@ -202,7 +202,7 @@ extension RamenAroundYouViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         if let cell = collectionView.cellForItem(at: indexPath) as? PlaceCollectionViewCell {
-            transitionAnimator.originFrame = cell.convert(cell.bounds, to: nil)
+            transitionAnimator.originFrame = cell.convert(cell.iconImageView.bounds, to: nil)
             transitionAnimator.presenting = true
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -243,6 +243,8 @@ extension RamenAroundYouViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+ //       transitionAnimator.originFrame = cell.convert(cell.bounds, to: nil)
+
         transitionAnimator.presenting = false
         return transitionAnimator
     }

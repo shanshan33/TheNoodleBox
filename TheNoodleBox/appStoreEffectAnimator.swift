@@ -13,6 +13,7 @@ class appStoreEffectAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     let duration = 1.0
     var presenting = true
     var originFrame = CGRect.zero
+    var closeFrame = CGRect.zero
     
     var dismissCompletion: (()->Void)?
     
@@ -45,13 +46,17 @@ class appStoreEffectAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 x: initialFrame.midX,
                 y: initialFrame.midY)
             detailView.clipsToBounds = true
+        } else {
+            UIView.animate(withDuration: 0.6, delay: 0, options:.curveEaseIn, animations: {
+                detailView.alpha = 0
+            }, completion: nil)
         }
-        
+
         containerView.addSubview(toView)
         containerView.bringSubview(toFront: detailView)
         
         UIView.animate(withDuration: duration, delay:0.0,
-                       usingSpringWithDamping: 0.55, initialSpringVelocity: 0.0,
+                       usingSpringWithDamping: 0.65, initialSpringVelocity: 0.0,
                        animations: {
                         detailView.transform = self.presenting ? CGAffineTransform.identity : scaleTransform
                         detailView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
