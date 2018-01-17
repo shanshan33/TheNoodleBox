@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Today's Noodles-->
+        <!--Aujourd'hui-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="NoodlesViewController" customModule="TheNoodleBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,69 +18,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AOD-IB-vq5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W4h-tS-679">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="OQx-J1-tsA">
-                                    <size key="itemSize" width="310" height="345"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="20" id="Cie-TK-Gfx">
+                                    <size key="itemSize" width="341" height="264"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoodleCell" id="Etj-21-poA">
-                                        <rect key="frame" x="32.5" y="20" width="310" height="345"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoodleCell" id="wQ8-Xs-flt" customClass="NoodleCell" customModule="TheNoodleBox" customModuleProvider="target">
+                                        <rect key="frame" x="27.5" y="30" width="320" height="290"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="345"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_ramen" translatesAutoresizingMaskIntoConstraints="NO" id="pKW-Dq-iti">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="345"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIO RAMEN" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMe-t1-y4j">
-                                                    <rect key="frame" x="15" y="0.0" width="280" height="75"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6R-BH-sut">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="fpN-04-pm3"/>
+                                                        <constraint firstAttribute="height" constant="240" id="fJi-Qh-qGy"/>
+                                                        <constraint firstAttribute="width" constant="320" id="sJp-4J-jVz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPPUDO Saint German " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-03-aLu">
+                                                    <rect key="frame" x="13" y="270" width="307" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="g5h-Oo-B0T"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIO RAMEN" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6e-KP-yEb">
+                                                    <rect key="frame" x="13" y="240" width="307" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Yox-J1-1XN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="pKW-Dq-iti" secondAttribute="trailing" constant="-16" id="8y0-HH-cZX"/>
-                                            <constraint firstAttribute="bottom" secondItem="pKW-Dq-iti" secondAttribute="bottom" id="9la-H7-B3e"/>
-                                            <constraint firstItem="iMe-t1-y4j" firstAttribute="top" secondItem="pKW-Dq-iti" secondAttribute="top" id="BSu-Rf-BXY"/>
-                                            <constraint firstAttribute="trailing" secondItem="iMe-t1-y4j" secondAttribute="trailing" constant="15" id="CMb-wX-tpF"/>
-                                            <constraint firstItem="iMe-t1-y4j" firstAttribute="leading" secondItem="Etj-21-poA" secondAttribute="leading" constant="15" id="Fl5-tU-Rkb"/>
-                                            <constraint firstItem="pKW-Dq-iti" firstAttribute="leading" secondItem="Etj-21-poA" secondAttribute="leading" id="Gj4-qL-4Vf"/>
-                                            <constraint firstItem="pKW-Dq-iti" firstAttribute="top" secondItem="Etj-21-poA" secondAttribute="top" id="zl7-zi-fgc"/>
+                                            <constraint firstItem="Q6R-BH-sut" firstAttribute="leading" secondItem="wQ8-Xs-flt" secondAttribute="leading" id="2We-9o-6sk"/>
+                                            <constraint firstAttribute="bottom" secondItem="vB2-03-aLu" secondAttribute="bottom" id="3Vf-pf-dQO"/>
+                                            <constraint firstItem="Q6R-BH-sut" firstAttribute="top" secondItem="wQ8-Xs-flt" secondAttribute="top" id="Bh2-qp-w2X"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q6R-BH-sut" secondAttribute="trailing" id="OX7-8l-lUR"/>
+                                            <constraint firstItem="vB2-03-aLu" firstAttribute="leading" secondItem="A6e-KP-yEb" secondAttribute="leading" id="VcI-rq-OoV"/>
+                                            <constraint firstItem="vB2-03-aLu" firstAttribute="top" secondItem="A6e-KP-yEb" secondAttribute="bottom" id="YaW-oL-fQU"/>
+                                            <constraint firstItem="vB2-03-aLu" firstAttribute="trailing" secondItem="Q6R-BH-sut" secondAttribute="trailing" id="dkR-kF-11O"/>
+                                            <constraint firstItem="vB2-03-aLu" firstAttribute="leading" secondItem="wQ8-Xs-flt" secondAttribute="leadingMargin" constant="5" id="f7S-b1-lpu"/>
+                                            <constraint firstItem="vB2-03-aLu" firstAttribute="trailing" secondItem="A6e-KP-yEb" secondAttribute="trailing" id="rQE-JH-zL0"/>
+                                            <constraint firstItem="A6e-KP-yEb" firstAttribute="top" secondItem="Q6R-BH-sut" secondAttribute="bottom" id="xvH-rP-DMr"/>
                                         </constraints>
+                                        <size key="customSize" width="320" height="290"/>
                                         <connections>
-                                            <segue destination="zTU-SR-eRp" kind="show" identifier="showRecipe" id="aJq-Ve-ucQ"/>
+                                            <outlet property="noodleImageView" destination="Q6R-BH-sut" id="ntu-9g-TGV"/>
+                                            <outlet property="noodleNameLabel" destination="A6e-KP-yEb" id="8SF-rb-z4g"/>
+                                            <outlet property="restaurantLabel" destination="vB2-03-aLu" id="vbx-TF-6KP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="QrA-R4-ucA"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="N6c-cy-OM1"/>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="0Ic-qD-gOU"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Ha3-Zq-dbp"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AOD-IB-vq5" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Wro-aN-AHi"/>
-                            <constraint firstItem="AOD-IB-vq5" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="hjd-pg-uVq"/>
-                            <constraint firstItem="AOD-IB-vq5" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="iMN-Q2-SIb"/>
-                            <constraint firstItem="AOD-IB-vq5" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="orN-54-hSv"/>
+                            <constraint firstItem="W4h-tS-679" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="JZG-14-XT3"/>
+                            <constraint firstItem="W4h-tS-679" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Wi1-rR-UOM"/>
+                            <constraint firstAttribute="bottom" secondItem="W4h-tS-679" secondAttribute="bottom" id="YTM-Fj-4PW"/>
+                            <constraint firstItem="W4h-tS-679" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="h22-Vw-T3b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Today's Noodles" largeTitleDisplayMode="always" id="Lmr-IB-Aqj"/>
+                    <navigationItem key="navigationItem" title="Aujourd'hui" id="Lmr-IB-Aqj"/>
+                    <connections>
+                        <outlet property="noodleCollectionView" destination="W4h-tS-679" id="e22-z1-xvJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoodleCell" id="Etj-21-poA">
+                    <rect key="frame" x="0.0" y="0.0" width="310" height="345"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="345"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ippudo" translatesAutoresizingMaskIntoConstraints="NO" id="pKW-Dq-iti">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="345"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIO RAMEN" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMe-t1-y4j">
+                                <rect key="frame" x="15" y="0.0" width="280" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="fpN-04-pm3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pKW-Dq-iti" secondAttribute="trailing" constant="-16" id="8y0-HH-cZX"/>
+                        <constraint firstAttribute="bottom" secondItem="pKW-Dq-iti" secondAttribute="bottom" id="9la-H7-B3e"/>
+                        <constraint firstItem="iMe-t1-y4j" firstAttribute="top" secondItem="pKW-Dq-iti" secondAttribute="top" id="BSu-Rf-BXY"/>
+                        <constraint firstAttribute="trailing" secondItem="iMe-t1-y4j" secondAttribute="trailing" constant="15" id="CMb-wX-tpF"/>
+                        <constraint firstItem="iMe-t1-y4j" firstAttribute="leading" secondItem="Etj-21-poA" secondAttribute="leading" constant="15" id="Fl5-tU-Rkb"/>
+                        <constraint firstItem="pKW-Dq-iti" firstAttribute="leading" secondItem="Etj-21-poA" secondAttribute="leading" id="Gj4-qL-4Vf"/>
+                        <constraint firstItem="pKW-Dq-iti" firstAttribute="top" secondItem="Etj-21-poA" secondAttribute="top" id="zl7-zi-fgc"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="1AS-m6-b1I"/>
+                    <connections>
+                        <segue destination="zTU-SR-eRp" kind="show" identifier="showRecipe" id="aJq-Ve-ucQ"/>
+                    </connections>
+                </collectionViewCell>
             </objects>
             <point key="canvasLocation" x="1581.5999999999999" y="-321.58920539730138"/>
         </scene>
@@ -92,7 +149,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_ramen" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-WR-UdT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-WR-UdT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="UTr-Tf-XS0"/>
@@ -313,10 +370,32 @@
             </objects>
             <point key="canvasLocation" x="1477.5999999999999" y="358.4707646176912"/>
         </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="9JX-b4-LmX">
+            <objects>
+                <viewController storyboardIdentifier="LaunchView" id="YxE-2P-T6q" customClass="LaunchViewController" customModule="TheNoodleBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YIg-yP-uj2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqZ-fM-Ad4">
+                                <rect key="frame" x="46" y="149" width="283" height="368"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kfa-mB-eSh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHc-IJ-GxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="707"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -378,41 +457,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_ramen" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-bc-vZc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-bc-vZc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="SMD-Ws-MEu"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-nz-tf3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="-30" width="375" height="697"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="per-Yb-H17">
-                                        <rect key="frame" x="15" y="0.0" width="345" height="593.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="per-Yb-H17">
+                                        <rect key="frame" x="0.0" y="-40" width="375" height="683.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRu-dM-JPC">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="270"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-KS-cAh">
-                                                        <rect key="frame" x="273" y="21" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                        <state key="normal" title="X">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="closeView:" destination="Ufi-yz-UVt" eventType="touchUpInside" id="IOw-js-TlG"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="270" id="BbT-yh-MDT"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poulet Shio Ramen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8R-mM-ArM">
-                                                <rect key="frame" x="0.0" y="280" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="bjK-nN-9XQ"/>
                                                 </constraints>
@@ -421,7 +479,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwd-Wh-56p">
-                                                <rect key="frame" x="0.0" y="340" width="345" height="200"/>
+                                                <rect key="frame" x="0.0" y="50" width="375" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="9LE-ju-Uqm"/>
                                                 </constraints>
@@ -430,15 +489,37 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOw-Of-v1d">
+                                                <rect key="frame" x="0.0" y="250" width="375" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="Ujg-1s-fLQ"/>
+                                                </constraints>
+                                                <string key="text">Now that the clocks have gone back and it’s getting darker earlier, autumn has well and truly arrived, bringing some bracingly cold evenings along with it. There is no better time to curl up on a sofa with a blanket and a hot chocolate, or to warm up with some mulled wine at a bonfire party. Here are 5 deliciously warming drinks you can enjoy at home or take out in a flask to keep those autumnal evening chills at bay. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-k3-W4V">
+                                                <rect key="frame" x="0.0" y="450" width="375" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="d2B-2r-YSn"/>
+                                                </constraints>
+                                                <string key="text">Now that the clocks have gone back and it’s getting darker earlier, autumn has well and truly arrived, bringing some bracingly cold evenings along with it. There is no better time to curl up on a sofa with a blanket and a hot chocolate, or to warm up with some mulled wine at a bonfire party. Here are 5 deliciously warming drinks you can enjoy at home or take out in a flask to keep those autumnal evening chills at bay. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQl-eY-D2n">
-                                                <rect key="frame" x="0.0" y="550" width="345" height="20"/>
+                                                <rect key="frame" x="0.0" y="650" width="375" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="6Dc-PZ-yNE"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fait avec ♥️ par TheNoodleBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jk-yP-RsN">
-                                                <rect key="frame" x="0.0" y="580" width="345" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="670" width="375" height="13.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -446,27 +527,43 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="345" id="V3l-UC-eYr"/>
+                                            <constraint firstAttribute="width" constant="375" id="V3l-UC-eYr"/>
                                             <constraint firstAttribute="trailing" secondItem="1Jk-yP-RsN" secondAttribute="trailing" id="rk0-3k-QEH"/>
                                             <constraint firstItem="1Jk-yP-RsN" firstAttribute="leading" secondItem="per-Yb-H17" secondAttribute="leading" id="tji-jr-r2i"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="per-Yb-H17" firstAttribute="leading" secondItem="ufg-nz-tf3" secondAttribute="leading" constant="15" id="QcM-q6-0ie"/>
-                                    <constraint firstItem="per-Yb-H17" firstAttribute="top" secondItem="ufg-nz-tf3" secondAttribute="top" id="fCN-c2-Ydr"/>
-                                    <constraint firstAttribute="trailing" secondItem="per-Yb-H17" secondAttribute="trailing" constant="15" id="nlQ-wF-EQ3"/>
+                                    <constraint firstItem="per-Yb-H17" firstAttribute="leading" secondItem="ufg-nz-tf3" secondAttribute="leading" id="QcM-q6-0ie"/>
+                                    <constraint firstItem="per-Yb-H17" firstAttribute="top" secondItem="ufg-nz-tf3" secondAttribute="top" constant="-40" id="fCN-c2-Ydr"/>
+                                    <constraint firstAttribute="trailing" secondItem="per-Yb-H17" secondAttribute="trailing" id="nlQ-wF-EQ3"/>
                                     <constraint firstAttribute="bottom" secondItem="per-Yb-H17" secondAttribute="bottom" constant="53.5" id="qU2-TP-0Lb"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="Ufi-yz-UVt" id="5pF-rU-Hpk"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-KS-cAh">
+                                <rect key="frame" x="300" y="45" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="lrx-75-MIQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="shN-0g-Ib4"/>
+                                </constraints>
+                                <state key="normal" image="closeButton">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeView:" destination="Ufi-yz-UVt" eventType="touchUpInside" id="IOw-js-TlG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ufg-nz-tf3" firstAttribute="top" secondItem="jTe-rh-3UC" secondAttribute="top" id="2Rl-EF-hcx"/>
+                            <constraint firstItem="ufg-nz-tf3" firstAttribute="top" secondItem="jTe-rh-3UC" secondAttribute="top" constant="-50" id="2Rl-EF-hcx"/>
+                            <constraint firstItem="6fB-KS-cAh" firstAttribute="top" secondItem="jTe-rh-3UC" secondAttribute="top" constant="25" id="8fW-vT-Apk"/>
                             <constraint firstItem="ufg-nz-tf3" firstAttribute="trailing" secondItem="Oua-bc-vZc" secondAttribute="trailing" id="MeX-Bn-lhu"/>
+                            <constraint firstItem="jTe-rh-3UC" firstAttribute="trailing" secondItem="6fB-KS-cAh" secondAttribute="trailing" constant="45" id="MrB-Ld-LpV"/>
                             <constraint firstItem="ufg-nz-tf3" firstAttribute="leading" secondItem="Oua-bc-vZc" secondAttribute="leading" id="ZjR-X4-42D"/>
                             <constraint firstItem="Oua-bc-vZc" firstAttribute="trailing" secondItem="jTe-rh-3UC" secondAttribute="trailing" id="c2Z-MO-qSb"/>
                             <constraint firstItem="Oua-bc-vZc" firstAttribute="top" secondItem="jTe-rh-3UC" secondAttribute="top" constant="-20" id="dBS-dh-oqk"/>
@@ -488,8 +585,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ippudo" width="2595" height="3000"/>
+        <image name="closeButton" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
-        <image name="photo_ramen" width="1200" height="1200"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

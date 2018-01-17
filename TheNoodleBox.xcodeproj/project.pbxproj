@@ -15,6 +15,8 @@
 		F32630BB1FE1746600D8287B /* PlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32630BA1FE1746600D8287B /* PlaceCollectionViewCell.swift */; };
 		F34343C31FFD425600187023 /* animateLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34343C21FFD425600187023 /* animateLoadingCell.swift */; };
 		F34D48911FD97CE800F0BBF7 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */; };
+		F3900C48200FE0A20065C984 /* Noodle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3900C47200FE0A20065C984 /* Noodle.swift */; };
+		F3900C4B200FE46D0065C984 /* NoodleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3900C4A200FE46D0065C984 /* NoodleCell.swift */; };
 		F39733661FE2D127005D3323 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39733651FE2D127005D3323 /* Photo.swift */; };
 		F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B331FD952C500A94960 /* AppDelegate.swift */; };
 		F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B351FD952C500A94960 /* NoodlesViewController.swift */; };
@@ -26,6 +28,7 @@
 		F39B0B561FD952C500A94960 /* TheNoodleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B551FD952C500A94960 /* TheNoodleBoxUITests.swift */; };
 		F3A2D81B1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */; };
 		F3A2D81D1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */; };
+		F3D93EFB2000412100E64802 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D93EFA2000412100E64802 /* LaunchViewController.swift */; };
 		F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,8 @@
 		F32630BA1FE1746600D8287B /* PlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F34343C21FFD425600187023 /* animateLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animateLoadingCell.swift; sourceTree = "<group>"; };
 		F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		F3900C47200FE0A20065C984 /* Noodle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noodle.swift; sourceTree = "<group>"; };
+		F3900C4A200FE46D0065C984 /* NoodleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodleCell.swift; sourceTree = "<group>"; };
 		F39733651FE2D127005D3323 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F39B0B301FD952C500A94960 /* TheNoodleBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheNoodleBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39B0B331FD952C500A94960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		F39B0B571FD952C500A94960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appStoreEffectAnimator.swift; sourceTree = "<group>"; };
+		F3D93EFA2000412100E64802 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +129,7 @@
 		F32630B71FE13EC200D8287B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3900C47200FE0A20065C984 /* Noodle.swift */,
 				F39733651FE2D127005D3323 /* Photo.swift */,
 				F32630B31FE138A600D8287B /* SearchResult.swift */,
 				F32630B51FE13AAB00D8287B /* Place.swift */,
@@ -141,6 +148,7 @@
 		F32630B91FE168AA00D8287B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F3D93EFA2000412100E64802 /* LaunchViewController.swift */,
 				F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */,
 				F39B0B351FD952C500A94960 /* NoodlesViewController.swift */,
 				F34D48901FD97CE800F0BBF7 /* RecipeViewController.swift */,
@@ -149,12 +157,22 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F3900C49200FE3BF0065C984 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F32630BA1FE1746600D8287B /* PlaceCollectionViewCell.swift */,
+				F34343C21FFD425600187023 /* animateLoadingCell.swift */,
+				F3900C4A200FE46D0065C984 /* NoodleCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F39B0B271FD952C500A94960 = {
 			isa = PBXGroup;
 			children = (
 				F39B0B321FD952C500A94960 /* TheNoodleBox */,
-				F32630B81FE1688100D8287B /* ViewModel */,
-				F32630B71FE13EC200D8287B /* Model */,
+				F39B0B3C1FD952C500A94960 /* Assets.xcassets */,
+				F39B0B3E1FD952C500A94960 /* LaunchScreen.storyboard */,
 				F39B0B491FD952C500A94960 /* TheNoodleBoxTests */,
 				F39B0B541FD952C500A94960 /* TheNoodleBoxUITests */,
 				F39B0B311FD952C500A94960 /* Products */,
@@ -176,17 +194,16 @@
 		F39B0B321FD952C500A94960 /* TheNoodleBox */ = {
 			isa = PBXGroup;
 			children = (
-				F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */,
-				F39B0B331FD952C500A94960 /* AppDelegate.swift */,
-				F32630B91FE168AA00D8287B /* ViewController */,
-				F39B0B391FD952C500A94960 /* Main.storyboard */,
-				F39B0B3C1FD952C500A94960 /* Assets.xcassets */,
-				F39B0B3E1FD952C500A94960 /* LaunchScreen.storyboard */,
 				F39B0B411FD952C500A94960 /* Info.plist */,
+				F39B0B331FD952C500A94960 /* AppDelegate.swift */,
+				F39B0B391FD952C500A94960 /* Main.storyboard */,
+				F32630B91FE168AA00D8287B /* ViewController */,
+				F3900C49200FE3BF0065C984 /* Cells */,
+				F32630B81FE1688100D8287B /* ViewModel */,
+				F32630B71FE13EC200D8287B /* Model */,
+				F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */,
 				F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */,
 				F32630AF1FE1331200D8287B /* SearchPlacesAPI.swift */,
-				F32630BA1FE1746600D8287B /* PlaceCollectionViewCell.swift */,
-				F34343C21FFD425600187023 /* animateLoadingCell.swift */,
 			);
 			path = TheNoodleBox;
 			sourceTree = "<group>";
@@ -410,11 +427,14 @@
 				F3A2D81B1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift in Sources */,
 				F32630B21FE134CE00D8287B /* PlaceViewModel.swift in Sources */,
 				F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */,
+				F3900C48200FE0A20065C984 /* Noodle.swift in Sources */,
 				F32630B61FE13AAB00D8287B /* Place.swift in Sources */,
 				F39733661FE2D127005D3323 /* Photo.swift in Sources */,
 				F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */,
 				F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */,
+				F3900C4B200FE46D0065C984 /* NoodleCell.swift in Sources */,
 				F32630BB1FE1746600D8287B /* PlaceCollectionViewCell.swift in Sources */,
+				F3D93EFB2000412100E64802 /* LaunchViewController.swift in Sources */,
 				F3A2D81D1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

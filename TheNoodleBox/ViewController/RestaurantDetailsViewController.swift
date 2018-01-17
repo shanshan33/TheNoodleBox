@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantDetailsViewController: UIViewController {
+class RestaurantDetailsViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,39 @@ class RestaurantDetailsViewController: UIViewController {
     @IBOutlet weak var placeDetailsScrollView: UIScrollView!
      @IBOutlet weak var placeInfoStackView: UIStackView!
     
+    
+    func setupViewController(placeViewModel: PlaceViewModel) {
+        placeViewModel.fetchPlaceIcon(url: placeViewModel.iconURL!, completion: {(image) in
+            self.placeImageView.image = image
+        })
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        let imageHeight = placeImageView.frame.height
+        //    if let hasPhoto = pro.thumbURL?.isEmpty {
+        
+//        if !hasPhoto {
+//            let newOrigin = CGPoint(x: 0, y: -imageHeight)
+//
+//            infoDetailScrollView.contentOffset = newOrigin
+//            infoDetailScrollView.contentInset = UIEdgeInsets(top: imageHeight, left: 0, bottom: 0, right: 0)
+//        } else {
+
+        placeDetailsScrollView.contentOffset = CGPoint(x: 0, y: -320)
+        placeDetailsScrollView.contentInset = UIEdgeInsets(top: 320, left: 0, bottom: 0, right: 0)
+
+    }
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y        
+        if offsetY < 0 {
+            placeImageView.frame.size.height = -offsetY
+        } else {
+            placeImageView.frame.size.height = placeImageView.frame.height
+        }
+    }
     
      // MARK: - Navigation
 

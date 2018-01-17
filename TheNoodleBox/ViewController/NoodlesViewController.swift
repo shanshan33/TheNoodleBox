@@ -10,9 +10,13 @@ import UIKit
 
 class NoodlesViewController: UIViewController {
 
+    @IBOutlet weak var noodleCollectionView: UICollectionView!
+    var ramens: [Noodle] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        configureRecommendRamen()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +28,15 @@ class NoodlesViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
+        searchController.searchBar.becomeFirstResponder()
   //      navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    private func configureRecommendRamen() {
+        let noodle1 = Noodle(title: "KURUGOMA RAMEN", image: #imageLiteral(resourceName: "KURUGOMARAMEN"), restaurantName: "Kodawari Ramen")
+        let noodle2 = Noodle(title: "AKAMARU RAMEN", image: #imageLiteral(resourceName: "AKAMARU"), restaurantName: "iPPUDO Saint- Germain")
+        let noodle3 = Noodle(title: "SHIO RAMEN", image: #imageLiteral(resourceName: "SHIORAMEN"), restaurantName: "Kodawari Ramen")
+        ramens = [noodle1, noodle2, noodle3]
     }
 }
 
@@ -36,12 +48,13 @@ extension NoodlesViewController :UICollectionViewDelegate {
 extension NoodlesViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return ramens.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "NoodleCell", for: indexPath)
-        cell.layer.cornerRadius = 20
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "NoodleCell", for: indexPath) as! NoodleCell
+        cell.configureCell(noodle: ramens[indexPath.row])
+        cell.layer.cornerRadius = 15
         return cell
     }
     

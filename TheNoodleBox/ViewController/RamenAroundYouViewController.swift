@@ -204,9 +204,9 @@ extension RamenAroundYouViewController: UICollectionViewDelegate {
         if let cell = collectionView.cellForItem(at: indexPath) as? PlaceCollectionViewCell {
             transitionAnimator.originFrame = cell.convert(cell.iconImageView.bounds, to: nil)
             transitionAnimator.presenting = true
-            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let restoDetail = storyboard.instantiateViewController(withIdentifier: "RestaurantDetails") as! RestaurantDetailsViewController
+            restoDetail.setupViewController(placeViewModel: self.placeViewModels[indexPath.row])
             restoDetail.transitioningDelegate = self
             self.present(restoDetail, animated: true, completion: nil)
         }
