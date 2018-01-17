@@ -73,6 +73,7 @@ class RamenAroundYouViewController: UIViewController {
     func fetchDataOnLoad() {
         viewModel.fetchRemanRequestForParis { (viewModels, error) in
             self.placeViewModels = viewModels
+            self.RamenRestosListCollectionView.reloadData()
         }
     }
     
