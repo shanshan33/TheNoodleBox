@@ -10,10 +10,11 @@ import UIKit
 
 class RestaurantDetailsViewController: UIViewController, UIScrollViewDelegate {
 
+    var viewModel = PlaceViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.placeImageView.image = viewModel.placeImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +35,8 @@ class RestaurantDetailsViewController: UIViewController, UIScrollViewDelegate {
     
     
     func setupViewController(placeViewModel: PlaceViewModel) {
-        placeViewModel.fetchPlaceIcon(url: placeViewModel.iconURL!, completion: {(image) in
-            self.placeImageView.image = image
-        })
+ //       placeViewModel.fetchPlaceIcon(url: placeViewModel.iconURL!, completion: {(image) in
+ //       })
     }
 
     override func viewDidLayoutSubviews() {
@@ -51,8 +51,8 @@ class RestaurantDetailsViewController: UIViewController, UIScrollViewDelegate {
 //            infoDetailScrollView.contentInset = UIEdgeInsets(top: imageHeight, left: 0, bottom: 0, right: 0)
 //        } else {
 
-        placeDetailsScrollView.contentOffset = CGPoint(x: 0, y: -320)
-        placeDetailsScrollView.contentInset = UIEdgeInsets(top: 320, left: 0, bottom: 0, right: 0)
+        placeDetailsScrollView.contentOffset = CGPoint(x: 0, y: -375)
+        placeDetailsScrollView.contentInset = UIEdgeInsets(top: 375, left: 0, bottom: 0, right: 0)
 
     }
     

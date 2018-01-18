@@ -27,7 +27,7 @@
 		F39B0B4B1FD952C500A94960 /* TheNoodleBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B4A1FD952C500A94960 /* TheNoodleBoxTests.swift */; };
 		F39B0B561FD952C500A94960 /* TheNoodleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B551FD952C500A94960 /* TheNoodleBoxUITests.swift */; };
 		F3A2D81B1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */; };
-		F3A2D81D1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */; };
+		F3A2D81D1FFE7C4400A0E4E3 /* appStoreAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81C1FFE7C4400A0E4E3 /* appStoreAnimation.swift */; };
 		F3D93EFB2000412100E64802 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D93EFA2000412100E64802 /* LaunchViewController.swift */; };
 		F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -78,7 +78,7 @@
 		F39B0B551FD952C500A94960 /* TheNoodleBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheNoodleBoxUITests.swift; sourceTree = "<group>"; };
 		F39B0B571FD952C500A94960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
-		F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appStoreEffectAnimator.swift; sourceTree = "<group>"; };
+		F3A2D81C1FFE7C4400A0E4E3 /* appStoreAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appStoreAnimation.swift; sourceTree = "<group>"; };
 		F3D93EFA2000412100E64802 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +157,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F36383D72010ADE6008F9539 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F3A2D81C1FFE7C4400A0E4E3 /* appStoreAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		F3900C49200FE3BF0065C984 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +209,7 @@
 				F3900C49200FE3BF0065C984 /* Cells */,
 				F32630B81FE1688100D8287B /* ViewModel */,
 				F32630B71FE13EC200D8287B /* Model */,
-				F3A2D81C1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift */,
+				F36383D72010ADE6008F9539 /* Animations */,
 				F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */,
 				F32630AF1FE1331200D8287B /* SearchPlacesAPI.swift */,
 			);
@@ -435,7 +443,7 @@
 				F3900C4B200FE46D0065C984 /* NoodleCell.swift in Sources */,
 				F32630BB1FE1746600D8287B /* PlaceCollectionViewCell.swift in Sources */,
 				F3D93EFB2000412100E64802 /* LaunchViewController.swift in Sources */,
-				F3A2D81D1FFE7C4400A0E4E3 /* appStoreEffectAnimator.swift in Sources */,
+				F3A2D81D1FFE7C4400A0E4E3 /* appStoreAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

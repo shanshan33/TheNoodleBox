@@ -36,7 +36,7 @@ class RamenAroundYouViewController: UIViewController {
     @IBOutlet weak var RamenRestosListCollectionView: UICollectionView!
     @IBOutlet weak var restoPopupView: UIView!
     
-    let transitionAnimator = appStoreEffectAnimator()
+    let transitionAnimator: appStoreAnimation = appStoreAnimation(type: .present)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,9 @@ class RamenAroundYouViewController: UIViewController {
     func fetchDataOnLoad() {
         viewModel.fetchRemanRequestForParis { (viewModels, error) in
             self.placeViewModels = viewModels
-            self.RamenRestosListCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self.RamenRestosListCollectionView.reloadData()
+            }
         }
     }
     
@@ -204,11 +206,11 @@ extension RamenAroundYouViewController: UICollectionViewDelegate {
     {
         if let cell = collectionView.cellForItem(at: indexPath) as? PlaceCollectionViewCell {
             transitionAnimator.originFrame = cell.convert(cell.iconImageView.bounds, to: nil)
-            transitionAnimator.presenting = true
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let restoDetail = storyboard.instantiateViewController(withIdentifier: "RestaurantDetails") as! RestaurantDetailsViewController
-            restoDetail.setupViewController(placeViewModel: self.placeViewModels[indexPath.row])
+            restoDetail.viewModel = self.placeViewModels[indexPath.row]
             restoDetail.transitioningDelegate = self
+            transitionAnimator.resizeFrame = CGRect(x: 0, y: 64, width: 375, height: 320)
             self.present(restoDetail, animated: true, completion: nil)
         }
     }
@@ -218,7 +220,6 @@ extension RamenAroundYouViewController: UICollectionViewDataSource {
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.placeViewModels.count > 0 ? self.placeViewModels.count : 5
-
     }
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -244,10 +245,10 @@ extension RamenAroundYouViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
- //       transitionAnimator.originFrame = cell.convert(cell.bounds, to: nil)
-
-        transitionAnimator.presenting = false
-        return transitionAnimator
+        let backAnimator = appStoreAnimation(type: .dismiss)
+        backAnimator.originFrame = transitionAnimator.originFrame
+        backAnimator.resizeFrame = transitionAnimator.resizeFrame
+        return backAnimator
     }
 }
 extension RamenAroundYouViewController: CLLocationManagerDelegate {

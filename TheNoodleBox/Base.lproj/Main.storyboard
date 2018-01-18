@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W4h-tS-679">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="0.0" id="Cie-TK-Gfx">
                                     <size key="itemSize" width="341" height="264"/>
@@ -78,6 +78,7 @@
                                             <outlet property="noodleImageView" destination="Q6R-BH-sut" id="ntu-9g-TGV"/>
                                             <outlet property="noodleNameLabel" destination="A6e-KP-yEb" id="8SF-rb-z4g"/>
                                             <outlet property="restaurantLabel" destination="vB2-03-aLu" id="vbx-TF-6KP"/>
+                                            <segue destination="zTU-SR-eRp" kind="show" id="KoK-K6-QXU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -133,9 +134,6 @@
                         <constraint firstItem="pKW-Dq-iti" firstAttribute="top" secondItem="Etj-21-poA" secondAttribute="top" id="zl7-zi-fgc"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="1AS-m6-b1I"/>
-                    <connections>
-                        <segue destination="zTU-SR-eRp" kind="show" identifier="showRecipe" id="aJq-Ve-ucQ"/>
-                    </connections>
                 </collectionViewCell>
             </objects>
             <point key="canvasLocation" x="1581.5999999999999" y="-321.58920539730138"/>
@@ -148,27 +146,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-WR-UdT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="320"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-WR-UdT">
+                                <rect key="frame" x="0.0" y="68" width="375" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="UTr-Tf-XS0"/>
+                                    <constraint firstAttribute="height" constant="375" id="UTr-Tf-XS0"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlN-bp-cMa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="550"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D8S-ao-awb">
-                                        <rect key="frame" x="15" y="0.0" width="345" height="593.5"/>
+                                        <rect key="frame" x="15" y="0.0" width="345" height="698.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-Bx-Bjn">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="270"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="375"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="270" id="Ngj-nA-HtR"/>
+                                                    <constraint firstAttribute="height" constant="375" id="Ngj-nA-HtR"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poulet Shio Ramen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-eq-Qf2">
-                                                <rect key="frame" x="0.0" y="280" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="385" width="345" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="cui-OJ-xcP"/>
                                                 </constraints>
@@ -177,7 +175,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-rG-xjc">
-                                                <rect key="frame" x="0.0" y="340" width="345" height="200"/>
+                                                <rect key="frame" x="0.0" y="445" width="345" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="JMd-3B-gaQ"/>
                                                 </constraints>
@@ -187,14 +185,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-iq-bed">
-                                                <rect key="frame" x="0.0" y="550" width="345" height="20"/>
+                                                <rect key="frame" x="0.0" y="655" width="345" height="20"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Vrl-Ic-dc2"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fait avec ♥️ par TheNoodleBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEI-73-cn8">
-                                                <rect key="frame" x="0.0" y="580" width="345" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="685" width="345" height="13.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,7 +247,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c9Y-Hu-P58">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c9Y-Hu-P58">
                                 <rect key="frame" x="0.0" y="68" width="375" height="550"/>
                             </mapView>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-TF-Ln7">
@@ -416,7 +414,7 @@
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4k5-ZR-Kkz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
@@ -436,7 +434,7 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tt4-DS-inP">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

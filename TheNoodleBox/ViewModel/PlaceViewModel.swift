@@ -14,21 +14,21 @@ class PlaceViewModel {
     
      let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.8566,2.3522&radius=5000&type=restaurant&keyword=ramen&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
     
-    let fetchImageURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%photoref%&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
+    let fetchImageURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=750&photoreference=%photoref%&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
     
     // new key of The Noodle Box V1 : AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o
     
     let searchPlacesAPI = SearchPlacesAPI()
-    
-    var iconURL: URL?
+
+    var placeImage: UIImage?
     var placeID: String?
     var name: String?
     var rating: Double?
     var address: String?
     
-    convenience init(iconURL: URL?, placeID: String?, name: String?, rating: Double?, address: String?) {
+    convenience init(placeImage: UIImage?, placeID: String?, name: String?, rating: Double?, address: String?) {
         self.init()
-        self.iconURL = iconURL
+        self.placeImage = placeImage
         self.placeID = placeID
         self.name = name
         self.rating = rating
@@ -42,25 +42,38 @@ class PlaceViewModel {
             case.success (let searchResult):
                 guard let results = searchResult.results else { return }
                 for place in results {
-                    self.iconURL = self.configureIconUrl(reference: (place.photos?.first?.reference)!)
-                    self.name  = place.name
-                    self.rating = place.rating
-                    self.address = place.address
-                    self.placeID = place.placeID
-                    
-                    let viewModel = PlaceViewModel(iconURL: self.iconURL, placeID: self.placeID, name:self.name, rating: self.rating, address: self.address)
-                    restoViewModels.append(viewModel)
+                    self.getPlaceImage(reference: (place.photos?.first?.reference)!, completionHandler: {(image) in
+                        self.placeImage = image
+                        self.name  = place.name
+                        self.rating = place.rating
+                        self.address = place.address
+                        self.placeID = place.placeID
+                        let viewModel = PlaceViewModel(placeImage: self.placeImage, placeID: self.placeID, name:self.name, rating: self.rating, address: self.address)
+                        restoViewModels.append(viewModel)
+                        completionHandler(restoViewModels, nil)
+                    })
                 }
-                completionHandler(restoViewModels, nil)
             case.failure(let error):
                 completionHandler([],error?.localizedDescription as? Error)
             }
         })
     }
     
-    private func configureIconUrl(reference: String) -> URL {
+    private func getPlaceImage(reference: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
         let urlString = fetchImageURL.replacingOccurrences(of: "%photoref%", with: reference)
-        return URL(string:urlString)!
+        if let url = URL(string:urlString) {
+            let task = URLSession.shared.dataTask(with: url) { data, _, error in
+                if error != nil {
+                    return
+                }
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        completionHandler(image)
+                    }
+                }
+            }
+            task.resume()
+        }
     }
     
     func fetchPlaceIcon(url:URL, completion:@escaping (_ icon: UIImage) -> Void ) {
