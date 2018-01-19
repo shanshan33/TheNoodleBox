@@ -82,32 +82,31 @@ class appStoreAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         guard let fromView = transitionContext.view(forKey: .from) else {
             return
         }
-        
         guard let toView = transitionContext.view(forKey: .to) else {
             return
         }
         
         let containerView = transitionContext.containerView
- //       let placeCell = toView
         let initialFrame = resizeFrame
         let finalFrame  = originFrame
         
         let xScaleFactor = finalFrame.width / initialFrame.width
         let yScaleFactor = finalFrame.height / initialFrame.height
         let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
+    
         
-        UIView.animate(withDuration: 1, delay: 0, options:.curveEaseIn, animations: {
-            fromView.frame = initialFrame
-            fromView.layer.cornerRadius = 10
- //           fromView.alpha = 0
-        }, completion: nil)
-        
+        fromView.frame = initialFrame
+
         containerView.addSubview(toView)
         containerView.bringSubview(toFront: fromView)
 
-        UIView.animate(withDuration: duration, animations: {
-            fromView.transform = scaleTransform
-            fromView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        fromView.layer.cornerRadius = 30
+                        fromView.transform = scaleTransform
+                        fromView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
         }, completion: { finished in
             transitionContext.completeTransition(true)
         })

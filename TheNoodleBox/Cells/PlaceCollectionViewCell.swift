@@ -24,7 +24,7 @@ class PlaceCollectionViewCell: UICollectionViewCell {
     public func configCell(viewModel:PlaceViewModel) {
         self.nameLabel.text = viewModel.name
         self.addressLabel.text = viewModel.address
-            self.iconImageView.image = viewModel.placeImage
+        self.iconImageView.image = viewModel.placeImage
     }
 
 }

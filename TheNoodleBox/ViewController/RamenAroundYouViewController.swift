@@ -210,7 +210,7 @@ extension RamenAroundYouViewController: UICollectionViewDelegate {
             let restoDetail = storyboard.instantiateViewController(withIdentifier: "RestaurantDetails") as! RestaurantDetailsViewController
             restoDetail.viewModel = self.placeViewModels[indexPath.row]
             restoDetail.transitioningDelegate = self
-            transitionAnimator.resizeFrame = CGRect(x: 0, y: 64, width: 375, height: 320)
+            transitionAnimator.resizeFrame = restoDetail.view.convert(restoDetail.placeImageView.bounds, to: nil)
             self.present(restoDetail, animated: true, completion: nil)
         }
     }
@@ -228,7 +228,7 @@ extension RamenAroundYouViewController: UICollectionViewDataSource {
             if self.placeViewModels.count > 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCell", for: indexPath) as! PlaceCollectionViewCell
                 cell.configCell(viewModel: self.placeViewModels[indexPath.row])
-                cell.iconImageView.layer.cornerRadius = 10
+       //         cell.iconImageView.layer.cornerRadius = 10
                 return cell
             }
             return collectionView.dequeueReusableCell(withReuseIdentifier: "Loader", for: indexPath)
