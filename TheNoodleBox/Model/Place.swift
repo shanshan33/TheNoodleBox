@@ -16,10 +16,11 @@ public struct Place {
     let address: String?
     let photos: [Photo]?
     let types: [String]?
+    let geometry: Geometry?
 }
 
 extension Place {
-    public init(icon: String?, placeID: String?, name:String?, address:String?, rating: Double?, photos: [Photo]? = nil, types: [String]? = nil) {
+    public init(icon: String?, placeID: String?, name:String?, address:String?, rating: Double?, photos: [Photo]? = nil, types: [String]? = nil, geometry: Geometry) {
         self.icon = icon
         self.placeID = placeID
         self.name = name
@@ -27,6 +28,8 @@ extension Place {
         self.address = address
         self.photos = photos
         self.types = types
+        self.geometry = geometry
+        
     }
 }
 
@@ -40,6 +43,7 @@ extension Place: JSONInitializable {
         case address = "vicinity"
         case photos  = "photos"
         case types   = "types"
+        case geometry =  "geometry"
     }
     
     public init(with json: JSON) throws {
@@ -48,6 +52,8 @@ extension Place: JSONInitializable {
         self.name = Place.optionalValue(for: .name, in: json)
         self.rating = Place.optionalValue(for: .rating, in: json)
         self.address = Place.optionalValue(for: .address, in: json)
+        self.geometry  = try Place.optionalValue(for: .geometry, in: json).flatMap(Geometry.init(with: ))
+
         var typesResult: [String] = []
         
         if let typeJson = json["types"] as? [String] {

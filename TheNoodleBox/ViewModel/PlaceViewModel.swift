@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import MapKit
 
 class PlaceViewModel {
     
@@ -25,30 +25,36 @@ class PlaceViewModel {
     var name: String?
     var rating: Double?
     var address: String?
+    var location: CLLocationCoordinate2D?
     
-    convenience init(placeImage: UIImage?, placeID: String?, name: String?, rating: Double?, address: String?) {
+    
+    convenience init(placeImage: UIImage?, placeID: String?, name: String?, rating: Double?, address: String?, location: CLLocationCoordinate2D? ) {
         self.init()
         self.placeImage = placeImage
         self.placeID = placeID
         self.name = name
         self.rating = rating
         self.address = address
+        self.location = location
     }
 
     func fetchRemanRequestForParis(completionHandler: @escaping (_ viewModels: [PlaceViewModel], _ error: Error?) -> Void) {
         var restoViewModels: [PlaceViewModel] = []
-        searchPlacesAPI.fetchRequestPlaces(requestURL, withCompletion: { (result) in
+        searchPlacesAPI.fetchRequestPlaces(requestURL, withCompletion: { [weak self] (result) in
             switch result {
             case.success (let searchResult):
                 guard let results = searchResult.results else { return }
                 for place in results {
-                    self.getPlaceImage(reference: (place.photos?.first?.reference)!, completionHandler: {(image) in
-                        self.placeImage = image
-                        self.name  = place.name
-                        self.rating = place.rating
-                        self.address = place.address
-                        self.placeID = place.placeID
-                        let viewModel = PlaceViewModel(placeImage: self.placeImage, placeID: self.placeID, name:self.name, rating: self.rating, address: self.address)
+                    self?.getPlaceImage(reference: (place.photos?.first?.reference)!, completionHandler: {(image) in
+                        self?.rating = place.rating
+                        self?.placeID = place.placeID
+                        self?.name  = place.name
+                        self?.address = place.address
+                        if let latitude = place.geometry?.location?.latitude, let longitude = place.geometry?.location?.Longitude {
+                            self?.location = CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longitude))
+                        }
+                        self?.placeImage = image
+                        let viewModel = PlaceViewModel(placeImage: self?.placeImage, placeID: self?.placeID, name:self?.name, rating: self?.rating, address: self?.address, location: self?.location)
                         restoViewModels.append(viewModel)
                         completionHandler(restoViewModels, nil)
                     })

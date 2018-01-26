@@ -28,6 +28,9 @@
 		F39B0B561FD952C500A94960 /* TheNoodleBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B0B551FD952C500A94960 /* TheNoodleBoxUITests.swift */; };
 		F3A2D81B1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */; };
 		F3A2D81D1FFE7C4400A0E4E3 /* appStoreAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A2D81C1FFE7C4400A0E4E3 /* appStoreAnimation.swift */; };
+		F3C06010201A3655006C4674 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0600F201A3655006C4674 /* RatingView.swift */; };
+		F3C06012201A3CC2006C4674 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C06011201A3CC2006C4674 /* Geometry.swift */; };
+		F3C06014201A3CFE006C4674 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C06013201A3CFE006C4674 /* Location.swift */; };
 		F3D93EFB2000412100E64802 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D93EFA2000412100E64802 /* LaunchViewController.swift */; };
 		F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,9 @@
 		F39B0B571FD952C500A94960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3A2D81A1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewController.swift; sourceTree = "<group>"; };
 		F3A2D81C1FFE7C4400A0E4E3 /* appStoreAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appStoreAnimation.swift; sourceTree = "<group>"; };
+		F3C0600F201A3655006C4674 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		F3C06011201A3CC2006C4674 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		F3C06013201A3CFE006C4674 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F3D93EFA2000412100E64802 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +139,8 @@
 				F39733651FE2D127005D3323 /* Photo.swift */,
 				F32630B31FE138A600D8287B /* SearchResult.swift */,
 				F32630B51FE13AAB00D8287B /* Place.swift */,
+				F3C06011201A3CC2006C4674 /* Geometry.swift */,
+				F3C06013201A3CFE006C4674 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				F36383D72010ADE6008F9539 /* Animations */,
 				F3E6B9221FD9ADF800522115 /* JsonProtocol.swift */,
 				F32630AF1FE1331200D8287B /* SearchPlacesAPI.swift */,
+				F3C0600F201A3655006C4674 /* RatingView.swift */,
 			);
 			path = TheNoodleBox;
 			sourceTree = "<group>";
@@ -429,7 +438,9 @@
 			files = (
 				F34343C31FFD425600187023 /* animateLoadingCell.swift in Sources */,
 				F34D48911FD97CE800F0BBF7 /* RecipeViewController.swift in Sources */,
+				F3C06014201A3CFE006C4674 /* Location.swift in Sources */,
 				F32630B01FE1331200D8287B /* SearchPlacesAPI.swift in Sources */,
+				F3C06010201A3655006C4674 /* RatingView.swift in Sources */,
 				F39B0B381FD952C500A94960 /* RamenAroundYouViewController.swift in Sources */,
 				F32630B41FE138A600D8287B /* SearchResult.swift in Sources */,
 				F3A2D81B1FFE727600A0E4E3 /* RestaurantDetailsViewController.swift in Sources */,
@@ -437,6 +448,7 @@
 				F39B0B341FD952C500A94960 /* AppDelegate.swift in Sources */,
 				F3900C48200FE0A20065C984 /* Noodle.swift in Sources */,
 				F32630B61FE13AAB00D8287B /* Place.swift in Sources */,
+				F3C06012201A3CC2006C4674 /* Geometry.swift in Sources */,
 				F39733661FE2D127005D3323 /* Photo.swift in Sources */,
 				F39B0B361FD952C500A94960 /* NoodlesViewController.swift in Sources */,
 				F3E6B9231FD9ADF800522115 /* JsonProtocol.swift in Sources */,
