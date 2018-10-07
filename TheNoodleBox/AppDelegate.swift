@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        GMSPlacesClient.provideAPIKey("AIzaSyBQJD3y2EQN720QXY_BRvE7O95URRD7TY8")
+        GMSPlacesClient.provideAPIKey("AIzaSyAKkJYVkhKjBJB9fe3kkx-zjl9S3gpuwhA")
+        
+        // new: AIzaSyDXVOstpp69AyJO80Vc4ArziEuDSDYrGFo
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let launchVC = storyboard.instantiateViewController(withIdentifier: "LaunchView") as! LaunchViewController

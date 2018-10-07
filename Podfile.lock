@@ -15,6 +15,12 @@ DEPENDENCIES:
   - GooglePlacePicker
   - GooglePlaces
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+
 SPEC CHECKSUMS:
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
@@ -22,4 +28,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 144b2d2c5a6bc577127306fb0e9dd9476368da41
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

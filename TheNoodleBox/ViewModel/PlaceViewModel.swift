@@ -12,12 +12,11 @@ import MapKit
 
 class PlaceViewModel {
     
-     let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.8566,2.3522&radius=5000&type=restaurant&keyword=ramen&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
+     let requestURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.8566,2.3522&radius=5000&type=restaurant&keyword=ramen&key=AIzaSyAKkJYVkhKjBJB9fe3kkx-zjl9S3gpuwhA"
     
-    let fetchImageURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=750&photoreference=%photoref%&key=AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o"
+    let fetchImageURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=750&photoreference=%photoref%&key=AIzaSyAKkJYVkhKjBJB9fe3kkx-zjl9S3gpuwhA"
     
-    // new key of The Noodle Box V1 : AIzaSyDtPREMc-BMfyvIfq0oN3I8sFYALDh7q2o
-    
+
     let searchPlacesAPI = SearchPlacesAPI()
 
     var placeImage: UIImage?
