@@ -1,8 +1,8 @@
 //
-//  appStoreEffectAnimator.swift
+//  AppStoreAnimator.swift
 //  TheNoodleBox
 //
-//  Created by Shanshan Zhao on 04/01/2018.
+//  Created by Shanshan Zhao on 08/10/2018.
 //  Copyright © 2018 Shanshan Zhao. All rights reserved.
 //
 
@@ -13,19 +13,18 @@ enum TransitionType {
     case dismiss
 }
 
-class appStoreAnimation: NSObject, UIViewControllerAnimatedTransitioning {
+class AppStoreAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    var type = TransitionType.present
-    init(type: TransitionType) {
-        self.type = type
-    }
+    private let duration = 1.0
     
-    let duration = 1.0
-    var presenting = true
+    var presenting: Bool = true
     var originFrame = CGRect.zero
     var resizeFrame = CGRect.zero
+    var type = TransitionType.present
     
-    var dismissCompletion: (()->Void)?
+    init(transitionType: TransitionType) {
+        self.type = transitionType
+    }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
@@ -40,16 +39,16 @@ class appStoreAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
     
-    /// present
-    private func presentAnimation(originFrame: CGRect, using transitionContext: UIViewControllerContextTransitioning) {
+    private func  presentAnimation(originFrame: CGRect, using transitionContext: UIViewControllerContextTransitioning) {
         
         guard let toView = transitionContext.view(forKey: .to) else {
             return
         }
+        
         let containerView = transitionContext.containerView
         let detailView = toView
         let initialFrame = originFrame
-        let finalFrame  = detailView.frame
+        let finalFrame = detailView.frame
         
         let xScaleFactor = initialFrame.width / finalFrame.width
         let yScaleFactor = initialFrame.height / finalFrame.height
@@ -78,7 +77,7 @@ class appStoreAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     /// dismiss
     private func dismissAnimation(resizeFrame: CGRect, using transitionContext: UIViewControllerContextTransitioning) {
-       
+        
         guard let fromView = transitionContext.view(forKey: .from) else {
             return
         }
@@ -93,13 +92,13 @@ class appStoreAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         let xScaleFactor = finalFrame.width / initialFrame.width
         let yScaleFactor = finalFrame.height / initialFrame.height
         let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
-    
+        
         
         fromView.frame = initialFrame
-
+        
         containerView.addSubview(toView)
         containerView.bringSubview(toFront: fromView)
-
+        
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseInOut,
@@ -112,5 +111,5 @@ class appStoreAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         })
     }
 
-}
 
+}

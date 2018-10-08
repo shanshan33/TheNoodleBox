@@ -1,5 +1,5 @@
 //
-//  animateLoadingCell.swift
+//  AnimatedLoadingCell.swift
 //  TheNoodleBox
 //
 //  Created by Shanshan Zhao on 03/01/2018.
@@ -10,7 +10,7 @@ import UIKit
 
 private let origin = CACurrentMediaTime()
 
-class animateLoadingCell: UICollectionViewCell {
+class AnimatedLoadingCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,11 +22,11 @@ class animateLoadingCell: UICollectionViewCell {
         backgroundColor = .white
     }
     
+    // TODO:
     // The index of the loading cell, used to shift slightly the timing of the
     // animations between consecutive cells.
     private var index = 0
     
-    /// The layer containing the drawing of the cell.
     private lazy var shapeLayer: CAShapeLayer = {
         let shapeLayer = CAShapeLayer()
         shapeLayer.fillColor = UIColor(white: 0.94, alpha: 1).cgColor
@@ -35,7 +35,7 @@ class animateLoadingCell: UICollectionViewCell {
         return shapeLayer
     }()
 
-    // The path for the shape to draw selon the  PlaceCell
+    // The path for the shape to draw selon the PlaceCell
     private var shapePath: CGPath {
         let path = CGMutablePath()
         path.addRect(CGRect(x: 0, y: 0, width: 150, height: 150))

@@ -36,12 +36,11 @@ class RamenAroundYouViewController: UIViewController {
     @IBOutlet weak var RamenRestosListCollectionView: UICollectionView!
     @IBOutlet weak var restoPopupView: UIView!
     
-    let transitionAnimator: appStoreAnimation = appStoreAnimation(type: .present)
+    let transitionAnimator: AppStoreAnimator = AppStoreAnimator(transitionType: .present)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-//        placesClient = GMSPlacesClient.shared()
         
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -54,7 +53,7 @@ class RamenAroundYouViewController: UIViewController {
         configureLayout()
         closedRestoTitle.addGestureRecognizer(tapRecognizer)
         
-        RamenRestosListCollectionView?.register(animateLoadingCell.self, forCellWithReuseIdentifier: "Loader")
+        RamenRestosListCollectionView?.register(AnimatedLoadingCell.self, forCellWithReuseIdentifier: "Loader")
         
     }
     
@@ -245,7 +244,7 @@ extension RamenAroundYouViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let backAnimator = appStoreAnimation(type: .dismiss)
+        let backAnimator = AppStoreAnimator(transitionType: .dismiss)
         backAnimator.originFrame = transitionAnimator.originFrame
         backAnimator.resizeFrame = transitionAnimator.resizeFrame
         return backAnimator
