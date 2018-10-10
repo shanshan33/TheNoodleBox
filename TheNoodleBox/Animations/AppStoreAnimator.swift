@@ -46,21 +46,20 @@ class AppStoreAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
         
         let containerView = transitionContext.containerView
-        let detailView = toView
         let initialFrame = originFrame
-        let finalFrame = detailView.frame
+        let finalFrame = toView.frame
         
         let xScaleFactor = initialFrame.width / finalFrame.width
         let yScaleFactor = initialFrame.height / finalFrame.height
         let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
         
-        detailView.transform = scaleTransform
-        detailView.center = CGPoint(x: initialFrame.midX, y: initialFrame.midY)
-        detailView.clipsToBounds = true
+        toView.transform = scaleTransform
+        toView.center = CGPoint(x: initialFrame.midX, y: initialFrame.midY)
+        toView.clipsToBounds = true
         
         containerView.addSubview(toView)
-        containerView.bringSubview(toFront: detailView)
-        detailView.layer.cornerRadius = 10
+        containerView.bringSubview(toFront: toView)
+        toView.layer.cornerRadius = 10
         
         UIView.animate(withDuration: duration,
                        delay: 0.0,
@@ -68,9 +67,9 @@ class AppStoreAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                        initialSpringVelocity: 0.0,
                        options: [],
                        animations: {
-                        detailView.layer.cornerRadius = 0
-                        detailView.transform = CGAffineTransform.identity
-                        detailView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
+                        toView.layer.cornerRadius = 0
+                        toView.transform = CGAffineTransform.identity
+                        toView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
         }, completion: { finished in transitionContext.completeTransition(true)
         })
     }

@@ -134,26 +134,9 @@ class RamenAroundYouViewController: UIViewController {
     
     private lazy var panRecognizer: UIPanGestureRecognizer = {
         let recognizer = UIPanGestureRecognizer()
- //       recognizer.addTarget(self, action: #selector(popupViewPanned(recognizer:)))
         return recognizer
     }()
     
-//    @objc private func popupViewPanned(recognizer: UIPanGestureRecognizer) {
-//        switch recognizer.state {
-//        case .began:
-//            animateTransitionIfNeeded(to: currentState.opposite, duration: 1.5)
-//            transitionAnimator.pauseAnimation()
-//        case .changed:
-//            let translation = recognizer.translation(in: popupView)
-//            var fraction = -translation.y / popupOffset
-//            if currentState == .open { fraction *= -1 }
-//            transitionAnimator.fractionComplete = fraction
-//        case .ended:
-//            transitionAnimator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-//        default:
-//            ()
-//        }
-//    }
     
     @objc func popupViewTapped(recognizer: UITapGestureRecognizer) {
         RamenRestosListCollectionView.reloadData()
